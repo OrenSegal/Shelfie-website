@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { AppleLogo } from '@/components/AppleLogo';
-import { GooglePlayLogo } from '@/components/GooglePlayLogo';
+import { AppStoreBadge } from '@/components/AppStoreBadge';
+import { GooglePlayBadge } from '@/components/GooglePlayBadge';
 
 export function Hero() {
   return (
@@ -28,21 +28,13 @@ export function Hero() {
                 The intelligent kitchen co-pilot that transforms chaotic inventory into delicious dinners. Join the cycle of smart cooking.
               </h2>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2 items-center">
-              <button className="flex items-center justify-center gap-3 bg-charcoal text-white rounded-xl px-5 py-3 h-16 min-w-[180px] hover:bg-black transition-all hover:-translate-y-1 shadow-xl group w-full sm:w-auto">
-                <AppleLogo />
-                <div className="flex flex-col items-start leading-none">
-                  <span className="text-[10px] font-medium opacity-80">Download on the</span>
-                  <span className="text-lg font-bold font-display">App Store</span>
-                </div>
-              </button>
-              <button className="flex items-center justify-center gap-3 bg-charcoal text-white rounded-xl px-5 py-3 h-16 min-w-[180px] hover:bg-black transition-all hover:-translate-y-1 shadow-xl group w-full sm:w-auto">
-                <GooglePlayLogo />
-                <div className="flex flex-col items-start leading-none">
-                  <span className="text-[10px] font-medium opacity-80">GET IT ON</span>
-                  <span className="text-lg font-bold font-display">Google Play</span>
-                </div>
-              </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2 items-center" data-testid="hero-badges">
+              <a href="#" className="transition-transform hover:-translate-y-1">
+                <AppStoreBadge />
+              </a>
+              <a href="#" className="transition-transform hover:-translate-y-1">
+                <GooglePlayBadge />
+              </a>
             </div>
             <div className="flex items-center justify-center lg:justify-start gap-4 pt-4 text-sm text-text-muted">
               <div className="flex -space-x-3">
