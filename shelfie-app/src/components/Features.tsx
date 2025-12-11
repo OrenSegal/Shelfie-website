@@ -14,8 +14,8 @@ export function Features() {
               A complete operating system for your modern culinary life.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-[2rem] shadow-sm border border-stone-100 hover:shadow-xl transition-all duration-300 group flex flex-col overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="md:col-span-2 md:row-span-2 bg-white rounded-3xl p-8 relative overflow-hidden group flex flex-col cursor-pointer active:scale-95 transition-transform">
               <div className="p-8 pb-0 flex-1">
                 <div className="size-12 bg-tomato/10 rounded-xl flex items-center justify-center text-tomato mb-6 group-hover:scale-110 transition-transform">
                   <span className="material-symbols-outlined text-2xl">photo_camera</span>
@@ -33,7 +33,7 @@ export function Features() {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-[2rem] shadow-sm border border-stone-100 hover:shadow-xl transition-all duration-300 group flex flex-col overflow-hidden">
+            <div className="bg-orange-50 rounded-3xl p-8 flex flex-col cursor-pointer active:scale-95 transition-transform">
               <div className="p-8 pb-0 flex-1">
                 <div className="size-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-6 group-hover:scale-110 transition-transform">
                   <span className="material-symbols-outlined text-2xl">restaurant_menu</span>
@@ -50,7 +50,8 @@ export function Features() {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-[2rem] shadow-sm border border-stone-100 hover:shadow-xl transition-all duration-300 group flex flex-col overflow-hidden">
+
+            <div className="bg-blue-50 rounded-3xl p-8 flex flex-col cursor-pointer active:scale-95 transition-transform">
               <div className="p-8 pb-0 flex-1">
                 <div className="size-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform">
                   <span className="material-symbols-outlined text-2xl">inventory_2</span>
@@ -84,42 +85,7 @@ export function Features() {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-[2rem] shadow-sm border border-stone-100 hover:shadow-xl transition-all duration-300 group flex flex-col overflow-hidden">
-                <div className="p-8 pb-0 flex-1">
-                    <div className="size-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 transition-transform">
-                        <span className="material-symbols-outlined text-2xl">calendar_month</span>
-                    </div>
-                    <h3 className="text-2xl font-bold font-display text-charcoal mb-3">Meal Planner</h3>
-                    <p className="text-text-muted leading-relaxed text-sm">
-                        Plan meals without the stress. Simply drag and drop recipes into your week, tailored to your diet and current inventory.
-                    </p>
-                </div>
-                <div className="mt-8 mx-8 mb-8 relative rounded-2xl bg-stone-50 h-64 overflow-hidden border-4 border-stone-50 shadow-inner p-4">
-                    <div className="flex gap-2 mb-4 overflow-x-auto pb-2">
-                        <div className="flex-shrink-0 w-12 flex flex-col items-center gap-1">
-                            <span className="text-[10px] uppercase font-bold text-text-muted">Mon</span>
-                            <div className="size-8 rounded-full bg-charcoal text-white flex items-center justify-center text-xs font-bold">12</div>
-                        </div>
-                        <div className="flex-shrink-0 w-12 flex flex-col items-center gap-1 opacity-40">
-                            <span className="text-[10px] uppercase font-bold text-text-muted">Tue</span>
-                            <div className="size-8 rounded-full bg-stone-200 text-charcoal flex items-center justify-center text-xs font-bold">13</div>
-                        </div>
-                        <div className="flex-shrink-0 w-12 flex flex-col items-center gap-1 opacity-40">
-                            <span className="text-[10px] uppercase font-bold text-text-muted">Wed</span>
-                            <div className="size-8 rounded-full bg-stone-200 text-charcoal flex items-center justify-center text-xs font-bold">14</div>
-                        </div>
-                    </div>
-                    <div className="bg-white p-3 rounded-xl border-l-4 border-tomato shadow-sm mb-2">
-                        <div className="text-xs font-bold text-tomato mb-1">Dinner</div>
-                        <div className="text-sm font-bold text-charcoal">Spicy Basil Chicken</div>
-                    </div>
-                    <div className="bg-white p-3 rounded-xl border-l-4 border-stem shadow-sm">
-                        <div className="text-xs font-bold text-stem mb-1">Lunch</div>
-                        <div className="text-sm font-bold text-charcoal">Leftover Salad</div>
-                    </div>
-                </div>
-            </div>
-            <div className="bg-white rounded-[2rem] shadow-sm border border-stone-100 hover:shadow-xl transition-all duration-300 group flex flex-col overflow-hidden">
+            <div className="bg-purple-50 rounded-3xl p-8 flex flex-col cursor-pointer active:scale-95 transition-transform">
                 <div className="p-8 pb-0 flex-1">
                     <div className="size-12 bg-pink-100 rounded-xl flex items-center justify-center text-pink-600 mb-6 group-hover:scale-110 transition-transform">
                         <span className="material-symbols-outlined text-2xl">monitoring</span>
@@ -142,38 +108,73 @@ export function Features() {
                     </div>
                 </div>
             </div>
-            <div className="bg-white rounded-[2rem] shadow-sm border border-stone-100 hover:shadow-xl transition-all duration-300 group flex flex-col overflow-hidden">
-                <div className="p-8 pb-0 flex-1">
-                    <div className="size-12 bg-yellow-100 rounded-xl flex items-center justify-center text-yellow-600 mb-6 group-hover:scale-110 transition-transform">
-                        <span className="material-symbols-outlined text-2xl">checklist</span>
-                    </div>
-                    <h3 className="text-2xl font-bold font-display text-charcoal mb-3">Grocery Automation</h3>
-                    <p className="text-text-muted leading-relaxed text-sm">
-                      Shop smarter. Your grocery list auto-populates when you&apos;re low on staples or planning a new recipe.
-                    </p>
+        <div className="bg-yellow-50 rounded-3xl p-8 flex flex-col cursor-pointer active:scale-95 transition-transform">
+            <div className="p-8 pb-0 flex-1">
+                <div className="size-12 bg-yellow-100 rounded-xl flex items-center justify-center text-yellow-600 mb-6 group-hover:scale-110 transition-transform">
+                    <span className="material-symbols-outlined text-2xl">checklist</span>
                 </div>
-                <div className="mt-8 mx-8 mb-8 relative rounded-2xl bg-stone-50 h-64 overflow-hidden border-4 border-stone-50 shadow-inner p-4">
-                    <div className="flex justify-between items-end mb-4 border-b border-stone-200 pb-2">
-                        <span className="font-bold text-lg text-charcoal">Trader Joe&apos;s</span>
-                        <span className="text-xs text-tomato font-bold bg-tomato/10 px-2 py-1 rounded">4 items</span>
+                <h3 className="text-2xl font-bold font-display text-charcoal mb-3">Grocery Automation</h3>
+                <p className="text-text-muted leading-relaxed text-sm">
+                  Shop smarter. Your grocery list auto-populates when you&apos;re low on staples or planning a new recipe.
+                </p>
+            </div>
+            <div className="mt-8 mx-8 mb-8 relative rounded-2xl bg-stone-50 h-64 overflow-hidden border-4 border-stone-50 shadow-inner p-4">
+                <div className="flex justify-between items-end mb-4 border-b border-stone-200 pb-2">
+                    <span className="font-bold text-lg text-charcoal">Trader Joe&apos;s</span>
+                    <span className="text-xs text-tomato font-bold bg-tomato/10 px-2 py-1 rounded">4 items</span>
+                </div>
+                <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                        <div className="size-5 rounded border-2 border-stone-300"></div>
+                        <span className="text-charcoal font-medium">Olive Oil</span>
                     </div>
-                    <div className="space-y-3">
-                        <div className="flex items-center gap-3">
-                            <div className="size-5 rounded border-2 border-stone-300"></div>
-                            <span className="text-charcoal font-medium">Olive Oil</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <div className="size-5 rounded border-2 border-stone-300"></div>
-                            <span className="text-charcoal font-medium">Garlic</span>
-                        </div>
-                        <div className="flex items-center gap-3 opacity-40">
-                            <div className="size-5 rounded border-2 border-stem bg-stem flex items-center justify-center"><span className="material-symbols-outlined text-white text-xs">check</span></div>
-                            <span className="text-charcoal font-medium line-through">Pasta</span>
-                        </div>
+                    <div className="flex items-center gap-3">
+                        <div className="size-5 rounded border-2 border-stone-300"></div>
+                        <span className="text-charcoal font-medium">Garlic</span>
+                    </div>
+                    <div className="flex items-center gap-3 opacity-40">
+                        <div className="size-5 rounded border-2 border-stem bg-stem flex items-center justify-center"><span className="material-symbols-outlined text-white text-xs">check</span></div>
+                        <span className="text-charcoal font-medium line-through">Pasta</span>
                     </div>
                 </div>
             </div>
-          </div>
+        </div>
+        <div className="bg-green-50 rounded-3xl p-8 flex flex-col cursor-pointer active:scale-95 transition-transform">
+            <div className="p-8 pb-0 flex-1">
+                <div className="size-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 transition-transform">
+                    <span className="material-symbols-outlined text-2xl">calendar_month</span>
+                </div>
+                <h3 className="text-2xl font-bold font-display text-charcoal mb-3">Meal Planner</h3>
+                <p className="text-text-muted leading-relaxed text-sm">
+                    Plan meals without the stress. Simply drag and drop recipes into your week, tailored to your diet and current inventory.
+                </p>
+            </div>
+            <div className="mt-8 mx-8 mb-8 relative rounded-2xl bg-stone-50 h-64 overflow-hidden border-4 border-stone-50 shadow-inner p-4">
+                <div className="flex gap-2 mb-4 overflow-x-auto pb-2">
+                    <div className="flex-shrink-0 w-12 flex flex-col items-center gap-1">
+                        <span className="text-[10px] uppercase font-bold text-text-muted">Mon</span>
+                        <div className="size-8 rounded-full bg-charcoal text-white flex items-center justify-center text-xs font-bold">12</div>
+                    </div>
+                    <div className="flex-shrink-0 w-12 flex flex-col items-center gap-1 opacity-40">
+                        <span className="text-[10px] uppercase font-bold text-text-muted">Tue</span>
+                        <div className="size-8 rounded-full bg-stone-200 text-charcoal flex items-center justify-center text-xs font-bold">13</div>
+                    </div>
+                    <div className="flex-shrink-0 w-12 flex flex-col items-center gap-1 opacity-40">
+                        <span className="text-[10px] uppercase font-bold text-text-muted">Wed</span>
+                        <div className="size-8 rounded-full bg-stone-200 text-charcoal flex items-center justify-center text-xs font-bold">14</div>
+                    </div>
+                </div>
+                <div className="bg-white p-3 rounded-xl border-l-4 border-tomato shadow-sm mb-2">
+                    <div className="text-xs font-bold text-tomato mb-1">Dinner</div>
+                    <div className="text-sm font-bold text-charcoal">Spicy Basil Chicken</div>
+                </div>
+                <div className="bg-white p-3 rounded-xl border-l-4 border-stem shadow-sm">
+                    <div className="text-xs font-bold text-stem mb-1">Lunch</div>
+                    <div className="text-sm font-bold text-charcoal">Leftover Salad</div>
+                </div>
+            </div>
+        </div>
+        </div>
         </div>
       </div>
     </div>

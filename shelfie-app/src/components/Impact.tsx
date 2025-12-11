@@ -19,15 +19,15 @@ export function Impact() {
                 <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
                   <span className="material-symbols-outlined text-tomato text-3xl mt-1">delete_forever</span>
                   <div>
-                    <h3 className="text-white text-xl font-bold font-display">32% Wasted</h3>
-                    <p className="text-stone-400 text-sm mt-1">The average US household throws away nearly a third of the food they buy.</p>
+                    <h3 className="text-white text-8xl font-bold font-display">32%</h3>
+                    <p className="text-stone-400 text-sm mt-1">of food is wasted by the average US household.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
                   <span className="material-symbols-outlined text-stem text-3xl mt-1">payments</span>
                   <div>
-                    <h3 className="text-white text-xl font-bold font-display">$3,000 Lost Annually</h3>
-                    <p className="text-stone-400 text-sm mt-1">A family of four tosses about $2,900-3,000 worth of food into the bin every year.</p>
+                    <h3 className="text-white text-8xl font-bold font-display">$3k</h3>
+                    <p className="text-stone-400 text-sm mt-1">lost annually by a family of four.</p>
                   </div>
                 </div>
               </div>
