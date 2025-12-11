@@ -4,7 +4,7 @@ import { GooglePlayBadge } from '@/components/GooglePlayBadge';
 
 export function Hero() {
   return (
-    <div className="mx-auto flex flex-col items-center relative overflow-hidden">
+    <div className="mx-auto flex flex-col items-center relative receipt bg-white drop-shadow-xl" data-testid="hero-receipt">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-tomato/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 -z-10"></div>
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-stem/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 -z-10"></div>
       <div className="flex flex-col max-w-[1200px] w-full px-4 md:px-10 py-12 md:py-24">
