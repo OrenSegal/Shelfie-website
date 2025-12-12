@@ -13,7 +13,7 @@ export function Hero() {
             <div className="flex flex-col gap-6">
               <div className="inline-flex items-center gap-2 self-center lg:self-start bg-white border border-stone-200 rounded-full px-4 py-1.5 shadow-sm hover:shadow-md transition-shadow cursor-default">
                 <span className="material-symbols-outlined text-tomato text-sm">local_fire_department</span>
-                <span className="text-xs font-bold text-charcoal uppercase tracking-wider font-display">Intelligent Kitchen OS v2.0</span>
+                <span className="text-xs font-bold text-charcoal uppercase tracking-wider font-display">Your Kitchen’s Second Brain</span>
               </div>
               <h1 className="text-charcoal text-5xl md:text-7xl font-display font-extrabold leading-[1.05] tracking-tight">
                 Stop staring at your fridge. <br />
@@ -25,7 +25,7 @@ export function Hero() {
                 </span>
               </h1>
               <h2 className="text-text-muted text-lg md:text-xl font-medium leading-relaxed max-w-xl mx-auto lg:mx-0 font-body">
-                The intelligent kitchen co-pilot that transforms chaotic inventory into delicious dinners. Join the cycle of smart cooking.
+                The intelligent kitchen co-pilot that transforms chaotic cupboards into delicious dinners. Join the cycle of smart cooking.
               </h2>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2 items-center" data-testid="hero-badges">
