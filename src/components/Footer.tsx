@@ -12,7 +12,7 @@ export function Footer() {
                       <h2 className="text-xl font-display font-bold">Shelfie</h2>
                   </div>
                   <p className="text-text-muted text-sm max-w-[280px] leading-relaxed">
-                      Your intelligent kitchen co-pilot, turning chaotic inventory into delicious dinners while helping the planet, one meal at a time.
+                      Your intelligent kitchen co-pilot, turning chaotic cupboards into delicious dinners while helping the planet, one meal at a time.
                   </p>
                   <div className="flex gap-4 mt-2">
                       <a className="size-10 rounded-full bg-stone-200 flex items-center justify-center text-charcoal hover:bg-tomato hover:text-white transition-colors" href="#"><span className="material-symbols-outlined text-sm">mail</span></a>

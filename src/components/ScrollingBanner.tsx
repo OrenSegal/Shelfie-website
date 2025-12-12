@@ -4,7 +4,7 @@ export function ScrollingBanner() {
   return (
     <div className="w-full bg-charcoal overflow-hidden whitespace-nowrap py-12 relative">
       <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-      <div className="flex animate-scroll gap-6 px-6">
+      <div className="flex animate-scroll gap-6 px-6 will-change-transform">
         <div className="w-72 h-48 rounded-2xl overflow-hidden relative shrink-0 border border-white/10 group -rotate-2">
           <Image src="/banner-1.webp" alt="Basil Pesto" fill className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 scale-110" />
           <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
