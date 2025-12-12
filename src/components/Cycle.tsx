@@ -92,7 +92,7 @@ export function Cycle() {
               {cycleSteps.map((step, index) => (
                 <div
                   key={index}
-                  ref={(el) => (stepRefs.current[index] = el)}
+                  ref={(el) => { stepRefs.current[index] = el; }}
                   className="min-h-screen pt-24"
                 >
                   <div className="inline-flex items-center gap-2 font-bold mb-3">
