@@ -36,6 +36,7 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} ${outfit.variable} bg-cream text-text-main font-body antialiased overflow-x-hidden selection:bg-tomato/20 selection:text-tomato`}
       >
+        <div className="bg-noise"></div>
         {children}
       </body>
     </html>
