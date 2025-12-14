@@ -7,9 +7,7 @@ export function ScrollingBanner() {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [velocity, setVelocity] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(true);
   const scrollContainer = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number>();
   const lastTimeRef = useRef<number>(0);
   const lastXRef = useRef<number>(0);
   const rafRef = useRef<number>();
@@ -190,11 +188,14 @@ export function ScrollingBanner() {
         </div>
         <div className="w-72 h-48 rounded-2xl overflow-hidden relative shrink-0 border border-white/10 group bg-stone-800 flex items-center justify-center -rotate-2">
           <div className="text-center">
-            <img 
-              src="/logo.png" 
-              alt="Shelfie Logo" 
-              className="w-12 h-12 mb-2 object-contain"
-            />
+            <div className="relative w-12 h-12 mb-2 mx-auto">
+              <Image
+                src="/logo.png"
+                alt="Shelfie Logo"
+                fill
+                className="object-contain"
+              />
+            </div>
             <div className="text-white font-display font-bold text-xl">2500+ Recipes</div>
           </div>
         </div>

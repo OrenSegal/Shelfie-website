@@ -5,6 +5,7 @@ import { Footer } from '@/components/Footer';
 import { Hero } from '@/components/Hero';
 import { Impact } from '@/components/Impact';
 import { ScrollingBanner } from '@/components/ScrollingBanner';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -16,10 +17,11 @@ export default function Home() {
             <header className="flex items-center justify-between whitespace-nowrap py-4">
               <div className="flex items-center gap-2 cursor-pointer select-none group">
                 <div className="size-12 relative flex items-center justify-center">
-                  <img 
+                  <Image
                     src="/logo.png" 
                     alt="Shelfie Logo" 
-                    className="w-full h-full object-contain"
+                    fill
+                    className="object-contain"
                   />
                 </div>
                 <h2 className="text-3xl font-display font-bold tracking-tight text-charcoal">Shelfie</h2>
