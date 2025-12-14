@@ -103,12 +103,13 @@ export function Cycle() {
       { threshold: 0.5 }
     );
 
-    stepRefs.current.forEach((ref) => {
+    const currentRefs = stepRefs.current;
+    currentRefs.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
 
     return () => {
-      stepRefs.current.forEach((ref) => {
+      currentRefs.forEach((ref) => {
         if (ref) observer.unobserve(ref);
       });
     };
