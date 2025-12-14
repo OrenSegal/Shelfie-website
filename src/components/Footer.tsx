@@ -42,7 +42,7 @@ export function Footer() {
               </div>
           </div>
           <div className="mt-16 text-center text-text-muted/60 text-xs">
-              © 2024 Shelfie Inc. All rights reserved.
+              Made with love and breadcrumbs.
           </div>
         </div>
       </div>

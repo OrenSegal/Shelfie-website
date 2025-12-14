@@ -8,18 +8,21 @@ import { ScrollingBanner } from '@/components/ScrollingBanner';
 
 export default function Home() {
   return (
-    <div className="relative flex min-h-screen w-full flex-col">
+    <div className="relative flex min-h-screen w-full max-w-full overflow-x-hidden flex-col">
       {/* Header */}
       <div className="w-full border-b border-stone-200/60 bg-cream/90 backdrop-blur-md sticky top-0 z-50 transition-all duration-300">
-        <div className="mx-auto max-w-[1200px]">
-          <div className="flex flex-1 flex-col px-4 md:px-10">
+        <div className="mx-auto max-w-[1200px] w-full">
+          <div className="flex flex-1 flex-col px-4 md:px-6 lg:px-8">
             <header className="flex items-center justify-between whitespace-nowrap py-4">
               <div className="flex items-center gap-2 cursor-pointer select-none group">
-                <div className="size-8 text-tomato relative flex items-center justify-center transition-transform group-hover:rotate-12">
-                  <span className="material-symbols-outlined text-[36px] drop-shadow-sm">nutrition</span>
-                  <span className="absolute -top-1 -right-1 size-3 bg-stem rounded-full border-2 border-cream hidden"></span>
+                <div className="size-12 relative flex items-center justify-center">
+                  <img 
+                    src="/logo.png" 
+                    alt="Shelfie Logo" 
+                    className="w-full h-full object-contain"
+                  />
                 </div>
-                <h2 className="text-xl font-display font-bold tracking-tight text-charcoal">Shelfie</h2>
+                <h2 className="text-3xl font-display font-bold tracking-tight text-charcoal">Shelfie</h2>
               </div>
               <div className="hidden md:flex flex-1 justify-center gap-10">
                 <a className="text-text-main hover:text-tomato text-sm font-semibold transition-colors" href="#cycle">The Cycle</a>

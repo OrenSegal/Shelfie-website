@@ -115,12 +115,12 @@ export function Cycle() {
   }, []);
 
   return (
-    <div className="py-16 md:py-32 bg-cream-dark relative" id="cycle">
-      <div className="mx-auto flex flex-col items-center">
-        <div className="flex flex-col max-w-[800px] w-full px-0 md:px-10 relative">
-          <div className="text-center mb-12 md:mb-20 px-4 relative z-10">
+    <div className="py-8 md:py-16 bg-cream-dark relative" id="cycle">
+      <div className="mx-auto max-w-[1200px] flex flex-col items-center">
+        <div className="flex flex-col w-full px-4 md:px-6 relative">
+          <div className="text-center mb-8 md:mb-12 relative z-10">
             <span className="text-tomato font-bold tracking-widest uppercase text-sm mb-2 block">How it works</span>
-            <h2 className="text-4xl md:text-5xl font-display font-black text-charcoal">The Shelfie Cycle</h2>
+            <h2 className="text-3xl md:text-4xl font-display font-black text-charcoal">The Shelfie Cycle</h2>
             <p className="mt-4 text-text-muted text-lg">A continuous loop of smart kitchen management.</p>
           </div>
           <div className="flex flex-col md:flex-row">
@@ -135,12 +135,12 @@ export function Cycle() {
             </div>
 
             {/* Mobile Carousel / Desktop Vertical Scroll */}
-            <div className="w-full md:w-1/2 flex flex-row md:flex-col overflow-x-auto md:overflow-visible gap-4 md:gap-24 relative z-10 px-4 md:px-0 snap-x snap-mandatory pb-8 md:pb-0 hide-scrollbar">
+            <div className="w-full md:w-1/2 flex flex-row md:flex-col overflow-x-auto md:overflow-visible gap-2 md:gap-8 relative z-10 px-0 md:px-0 snap-x snap-mandatory pb-4 md:pb-0 hide-scrollbar">
               {cycleSteps.map((step, index) => (
                 <div
                   key={index}
                   ref={(el) => { stepRefs.current[index] = el; }}
-                  className="min-w-[85vw] md:min-w-0 snap-center md:snap-align-none pt-0 md:min-h-screen md:pt-24 flex-shrink-0"
+                  className="min-w-[80vw] md:min-w-0 snap-center md:snap-align-none pt-0 md:min-h-[60vh] md:pt-8 flex-shrink-0"
                 >
                   <div className="block md:hidden mb-6">
                     <div className="bg-white p-4 rounded-2xl shadow-sm border border-stone-100 aspect-video relative overflow-hidden">
