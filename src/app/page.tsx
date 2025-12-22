@@ -5,11 +5,18 @@ import { Footer } from '@/components/Footer';
 import { Hero } from '@/components/Hero';
 import { Impact } from '@/components/Impact';
 import { ScrollingBanner } from '@/components/ScrollingBanner';
+import { ScrollProgress } from '@/components/ScrollProgress';
+import { InteractiveDemo } from '@/components/InteractiveDemo';
+import { VoiceDemo } from '@/components/VoiceDemo';
+import { Testimonials } from '@/components/Testimonials';
 import Image from 'next/image';
 
 export default function Home() {
   return (
     <div className="relative flex min-h-screen w-full max-w-full overflow-x-hidden flex-col">
+      {/* Scroll Progress Indicator */}
+      <ScrollProgress />
+
       {/* Header */}
       <div className="w-full border-b border-stone-200/60 bg-cream/90 backdrop-blur-md sticky top-0 z-50 transition-all duration-300">
         <div className="mx-auto max-w-[1200px] w-full">
@@ -18,21 +25,22 @@ export default function Home() {
               <div className="flex items-center gap-2 cursor-pointer select-none group">
                 <div className="size-12 relative flex items-center justify-center">
                   <Image
-                    src="/logo.png" 
-                    alt="Shelfie Logo" 
+                    src="/logo.png"
+                    alt="Shelfie Logo"
                     fill
                     className="object-contain"
                   />
                 </div>
                 <h2 className="text-3xl font-display font-bold tracking-tight text-charcoal">Shelfie</h2>
               </div>
-              <div className="hidden md:flex flex-1 justify-center gap-10">
+              <nav className="hidden md:flex flex-1 justify-center gap-10">
                 <a className="text-text-main hover:text-tomato text-sm font-semibold transition-colors" href="#cycle">The Cycle</a>
                 <a className="text-text-main hover:text-tomato text-sm font-semibold transition-colors" href="#features">Features</a>
+                <a className="text-text-main hover:text-tomato text-sm font-semibold transition-colors" href="#demo">Try It</a>
                 <a className="text-text-main hover:text-tomato text-sm font-semibold transition-colors" href="#impact">Impact</a>
-              </div>
+              </nav>
               <div className="flex items-center gap-4">
-                <button className="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-charcoal hover:bg-tomato transition-colors text-white text-sm font-bold shadow-lg">
+                <button className="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-charcoal hover:bg-tomato transition-colors text-white text-sm font-bold shadow-lg glow-on-hover">
                   <span className="truncate">Download</span>
                 </button>
               </div>
@@ -46,7 +54,10 @@ export default function Home() {
         <ScrollingBanner />
         <Features />
         <Cycle />
+        <InteractiveDemo />
+        <VoiceDemo />
         <Impact />
+        <Testimonials />
         <Cta />
       </main>
 
