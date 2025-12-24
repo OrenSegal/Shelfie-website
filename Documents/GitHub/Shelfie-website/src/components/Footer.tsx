@@ -1,50 +1,49 @@
 export function Footer() {
   return (
-    <footer className="bg-cream border-t border-stone-200 py-16">
-      <div className="mx-auto flex justify-center px-4 md:px-10">
-        <div className="max-w-[1200px] w-full">
-          <div className="flex flex-col md:flex-row justify-between gap-12">
-              <div className="flex flex-col gap-6">
-                  <div className="flex items-center gap-2 text-charcoal">
-                      <div className="size-6 text-tomato">
-                          <span className="material-symbols-outlined">nutrition</span>
-                      </div>
-                      <h2 className="text-xl font-display font-bold">Shelfie</h2>
-                  </div>
-                  <p className="text-text-muted text-sm max-w-[280px] leading-relaxed">
-                      Your intelligent kitchen co-pilot, turning chaotic cupboards into delicious dinners while helping the planet, one meal at a time.
+    <footer className="bg-white border-t border-stone-100 py-20 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[url('/grid.svg')]"></div>
+
+      <div className="mx-auto max-w-[1200px] w-full px-4 md:px-8 relative z-10">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-12">
+              <div className="max-w-sm">
+                  <h2 className="text-2xl font-display font-black text-charcoal mb-4">Shelfie.</h2>
+                  <p className="text-text-muted leading-relaxed mb-6">
+                      We're on a mission to kill food waste and help you cook better meals. Built for messy kitchens and busy humans.
                   </p>
-                  <div className="flex gap-4 mt-2">
-                      <a className="size-10 rounded-full bg-stone-200 flex items-center justify-center text-charcoal hover:bg-tomato hover:text-white transition-colors" href="#"><span className="material-symbols-outlined text-sm">mail</span></a>
-                      <a className="size-10 rounded-full bg-stone-200 flex items-center justify-center text-charcoal hover:bg-tomato hover:text-white transition-colors" href="#"><span className="material-symbols-outlined text-sm">public</span></a>
-                      <a className="size-10 rounded-full bg-stone-200 flex items-center justify-center text-charcoal hover:bg-tomato hover:text-white transition-colors" href="#"><span className="material-symbols-outlined text-sm">alternate_email</span></a>
+                  <div className="flex gap-4">
+                       <a href="#" className="text-stone-400 hover:text-tomato transition-colors"><span className="material-symbols-outlined">mail</span></a>
+                       <a href="#" className="text-stone-400 hover:text-tomato transition-colors"><span className="material-symbols-outlined">camera_alt</span></a> {/* Instagram */}
+                       <a href="#" className="text-stone-400 hover:text-tomato transition-colors"><span className="material-symbols-outlined">alternate_email</span></a> {/* Twitter/X */}
                   </div>
               </div>
-              <div className="flex flex-wrap gap-12 md:gap-24">
-                  <div className="flex flex-col gap-4">
-                      <h3 className="text-charcoal font-bold font-display">Product</h3>
-                      <a className="text-text-muted text-sm hover:text-tomato transition-colors" href="#">Download</a>
-                      <a className="text-text-muted text-sm hover:text-tomato transition-colors" href="#">Cycle</a>
-                      <a className="text-text-muted text-sm hover:text-tomato transition-colors" href="#">Recipes</a>
-                      <a className="text-text-muted text-sm hover:text-tomato transition-colors" href="#">Pricing</a>
+              
+              <div className="flex gap-16">
+                  <div>
+                      <h4 className="font-bold text-charcoal mb-4">Product</h4>
+                      <ul className="space-y-2 text-stone-500 text-sm">
+                          <li><a href="#" className="hover:text-tomato">Download</a></li>
+                          <li><a href="#features" className="hover:text-tomato">Features</a></li>
+                          <li><a href="#impact" className="hover:text-tomato">Savings Calculator</a></li>
+                      </ul>
                   </div>
-                  <div className="flex flex-col gap-4">
-                      <h3 className="text-charcoal font-bold font-display">Mission</h3>
-                      <a className="text-text-muted text-sm hover:text-tomato transition-colors" href="#">Food Waste</a>
-                      <a className="text-text-muted text-sm hover:text-tomato transition-colors" href="#">About Us</a>
-                      <a className="text-text-muted text-sm hover:text-tomato transition-colors" href="#">Sustainability</a>
-                  </div>
-                  <div className="flex flex-col gap-4">
-                      <h3 className="text-charcoal font-bold font-display">Legal</h3>
-                      <a className="text-text-muted text-sm hover:text-tomato transition-colors" href="#">Privacy</a>
-                      <a className="text-text-muted text-sm hover:text-tomato transition-colors" href="#">Terms</a>
+                   <div>
+                      <h4 className="font-bold text-charcoal mb-4">Company</h4>
+                      <ul className="space-y-2 text-stone-500 text-sm">
+                          <li><a href="#" className="hover:text-tomato">Our Story</a></li>
+                          <li><a href="#" className="hover:text-tomato">Privacy Policy</a></li>
+                          <li><a href="#" className="hover:text-tomato">Terms of Service</a></li>
+                      </ul>
                   </div>
               </div>
           </div>
-          <div className="mt-16 text-center text-text-muted/60 text-xs">
-              Made with love and breadcrumbs.
+          
+          <div className="mt-20 pt-8 border-t border-stone-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-stone-400 font-medium">
+              <div>© 2025 Shelfie Inc. All rights reserved.</div>
+              <div className="flex items-center gap-1">
+                  Made with <span className="text-tomato">♥</span> and leftover pizza.
+              </div>
           </div>
-        </div>
       </div>
     </footer>
   );

@@ -1,164 +1,176 @@
 "use client";
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 
 const cycleSteps = [
   {
-    title: "Snap your haul",
-    description: "Don't type a thing. Snap a photo of your receipt, scan your fridge shelf, or just speak your grocery list. Shelfie digitizes your kitchen instantly.",
-    icon: "photo_camera",
-    category: "Intake",
-    color: "text-tomato",
+    title: "Scan.",
+    subtitle: "The Magic Camera",
+    description: "Point at your messy fridge. Our AI identifies ingredients, brands, and expiry dates instantly.",
+    icon: "/icons/interface/scan.webp",
+    color: "bg-charcoal text-white",
+    image: "/banner-4.webp" 
   },
   {
-    title: "AI Catalogs Everything",
-    description: "Our engine identifies ingredients, estimates quantities, and automatically tags expiration dates so you never have to guess 'is this still good?'.",
-    icon: "psychology",
-    category: "Brain",
-    color: "text-purple-600",
+    title: "Track.",
+    subtitle: "The Digital Twin",
+    description: "Your physical pantry is now digital. Search it, sort it, and get notified before food spoils.",
+    icon: "/icons/interface/inventory.webp",
+    color: "bg-purple-100 text-purple-600",
+    image: "/cubes.webp"
   },
   {
-    title: "Recipes meet Pantry",
-    description: "The magic moment. We match what you have with what you can make. Prioritizing ingredients that need to be used now.",
-    icon: "restaurant_menu",
-    category: "Match",
-    color: "text-tomato",
+    title: "Cook.",
+    subtitle: "The Chef Engine",
+    description: "Get recipes based strictly on what you have right now. No 'run to the store' required.",
+    icon: "/icons/kitchen_tools/kitchen_knife.webp",
+    color: "bg-orange-100 text-orange-600",
+    image: "/feature-2.webp"
   },
   {
-    title: "Waste nothing. Repeat.",
-    description: "As you cook, your pantry updates automatically. Missing staples are added to your shopping list. The cycle continues, smarter every time.",
-    icon: "recycling",
-    category: "Loop",
-    color: "text-stem",
+    title: "Restock.",
+    subtitle: "The Auto-List",
+    description: "Used the last egg? It's already on your shopping list. The cycle completes itself.",
+    icon: "/icons/interface/grocery.webp",
+    color: "bg-green-100 text-stem",
+    image: "/banner-3.webp"
   },
 ];
 
-const CycleVisual = ({ stepIndex }: { stepIndex: number }) => {
-  switch (stepIndex) {
-    case 0:
-      return (
-        <div className="w-full h-full bg-stone-100 flex items-center justify-center relative">
-          <div className="absolute inset-0 bg-black/5 flex items-center justify-center">
-            <span className="material-symbols-outlined text-4xl text-charcoal/20">qr_code_scanner</span>
-          </div>
-          <div className="bg-white px-3 py-1 rounded shadow text-xs font-bold text-tomato z-10 animate-bounce">
-            Scan Complete
-          </div>
-        </div>
-      );
-    case 1:
-      return (
-        <div className="w-full h-full bg-stone-100 p-4">
-          <div className="space-y-2">
-            <div className="h-2 w-full bg-stone-200 rounded animate-pulse"></div>
-            <div className="h-2 w-2/3 bg-stone-200 rounded animate-pulse"></div>
-            <div className="flex gap-2 mt-4">
-              <span className="bg-purple-100 text-purple-600 text-[10px] px-2 py-0.5 rounded font-bold">Spinach</span>
-              <span className="bg-purple-100 text-purple-600 text-[10px] px-2 py-0.5 rounded font-bold">Milk</span>
-            </div>
-          </div>
-        </div>
-      );
-    case 2:
-      return (
-        <div className="w-full h-full bg-stone-100 relative">
-          <div className="absolute top-2 left-2 right-2 bg-white p-2 rounded shadow-sm border border-stone-100">
-            <div className="flex justify-between items-center mb-1">
-              <div className="h-2 w-16 bg-stone-200 rounded"></div>
-              <span className="text-[10px] text-green-600 font-bold">Match!</span>
-            </div>
-            <div className="h-10 bg-stone-50 rounded mb-1"></div>
-          </div>
-        </div>
-      );
-    case 3:
-      return (
-        <div className="w-full h-full bg-stone-100 flex items-center justify-center">
-          <div className="text-center">
-            <div className="text-2xl font-bold text-charcoal mb-1">0%</div>
-            <div className="text-[10px] uppercase text-text-muted tracking-widest">Waste</div>
-          </div>
-        </div>
-      );
-    default:
-      return null;
-  }
-};
-
 export function Cycle() {
   const [activeStep, setActiveStep] = useState(0);
-  const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [progress, setProgress] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const startTimer = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    setProgress(0);
+    
+    intervalRef.current = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          nextStep();
+          return 0;
+        }
+        return prev + 1; // Adjust speed here
+      });
+    }, 50); // 50ms * 100 = 5 seconds per slide
+  };
+
+  const nextStep = () => {
+    setActiveStep((prev) => (prev + 1) % cycleSteps.length);
+  };
+
+  const setStep = (index: number) => {
+    setActiveStep(index);
+    startTimer();
+  };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = stepRefs.current.indexOf(entry.target as HTMLDivElement);
-            if (index !== -1) {
-                setActiveStep(index);
-            }
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    stepRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
+    startTimer();
     return () => {
-      stepRefs.current.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
-      });
+      if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, []);
+  }, [activeStep]);
 
   return (
-    <div className="py-8 md:py-16 bg-cream-dark relative" id="cycle">
-      <div className="mx-auto max-w-[1200px] flex flex-col items-center">
-        <div className="flex flex-col w-full px-4 md:px-6 relative">
-          <div className="text-center mb-8 md:mb-12 relative z-10">
-            <span className="text-tomato font-bold tracking-widest uppercase text-sm mb-2 block">How it works</span>
-            <h2 className="text-3xl md:text-4xl font-display font-black text-charcoal">The Shelfie Cycle</h2>
-            <p className="mt-4 text-text-muted text-lg">A continuous loop of smart kitchen management.</p>
-          </div>
-          <div className="flex flex-col md:flex-row">
-            <div className="w-full md:w-1/2">
-              <div className="md:sticky md:top-1/2 md:-translate-y-1/2 hidden md:block">
-                <div className="bg-white p-6 rounded-3xl shadow-soft border border-stone-100 rotate-2 group-hover:rotate-0 transition-transform duration-500 max-w-[320px]">
-                  <div className="relative rounded-2xl overflow-hidden aspect-video bg-stone-100 mb-4">
-                     <CycleVisual stepIndex={activeStep} />
-                  </div>
-                </div>
-              </div>
-            </div>
+    <section className="relative bg-cream-dark py-24 overflow-hidden" id="cycle">
+      <div className="mx-auto max-w-[1200px] px-4 md:px-8">
+        
+        <div className="mb-12 text-center md:text-left">
+           <span className="text-tomato font-bold tracking-widest uppercase text-xs mb-3 block">How it works</span>
+           <h2 className="text-4xl md:text-6xl font-display font-black text-charcoal">
+              The Loop.
+           </h2>
+        </div>
 
-            {/* Mobile Carousel / Desktop Vertical Scroll */}
-            <div className="w-full md:w-1/2 flex flex-row md:flex-col overflow-x-auto md:overflow-visible gap-2 md:gap-8 relative z-10 px-0 md:px-0 snap-x snap-mandatory pb-4 md:pb-0 hide-scrollbar">
-              {cycleSteps.map((step, index) => (
-                <div
-                  key={index}
-                  ref={(el) => { stepRefs.current[index] = el; }}
-                  className="min-w-[80vw] md:min-w-0 snap-center md:snap-align-none pt-0 md:min-h-[60vh] md:pt-8 flex-shrink-0"
-                >
-                  <div className="block md:hidden mb-6">
-                    <div className="bg-white p-4 rounded-2xl shadow-sm border border-stone-100 aspect-video relative overflow-hidden">
-                       <CycleVisual stepIndex={index} />
+        <div className="flex flex-col lg:flex-row gap-12 items-center">
+          
+          {/* LEFT: The Interactive Phone */}
+          <div className="w-full max-w-md lg:w-5/12 aspect-[9/18] relative flex-shrink-0">
+             <div className="absolute inset-0 bg-charcoal rounded-[3rem] shadow-2xl border-[8px] border-charcoal overflow-hidden ring-1 ring-white/20 z-10 transform transition-transform duration-500 hover:scale-[1.02]">
+                {/* Dynamic Image Layer */}
+                {cycleSteps.map((step, index) => (
+                  <div 
+                    key={index}
+                    className={`absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                      activeStep === index ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+                    }`}
+                  >
+                    <div className="absolute inset-0 bg-stone-100">
+                      <Image 
+                          src={step.image} 
+                          alt={step.title}
+                          fill
+                          className="object-cover"
+                      />
+                       {/* Gradient Overlay for Text Visibility */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                      
+                      {/* Phone Internal UI */}
+                      <div className="absolute bottom-10 left-6 right-6 text-white">
+                          <div className="flex items-center gap-3 mb-4">
+                              <div className={`p-2 rounded-xl backdrop-blur-md bg-white/20`}>
+                                   <Image src={step.icon} width={24} height={24} alt="icon" />
+                              </div>
+                              <span className="text-sm font-bold uppercase tracking-wider opacity-80">{step.subtitle}</span>
+                          </div>
+                          <h3 className="font-display font-bold text-3xl leading-tight">{step.title}</h3>
+                      </div>
                     </div>
                   </div>
-                  <div className="inline-flex items-center gap-2 font-bold mb-3">
-                    <span className={`material-symbols-outlined ${step.color}`}>{step.icon}</span>
-                    <span className={`uppercase tracking-wide text-xs ${step.color}`}>{step.category}</span>
-                  </div>
-                  <h3 className="text-3xl font-display font-bold text-charcoal mb-4">{step.title}</h3>
-                  <p className="text-text-muted leading-relaxed">{step.description}</p>
+                ))}
+                
+                {/* Status Bar */}
+                <div className="absolute top-0 w-full h-12 flex justify-between items-center px-6 z-20">
+                    <span className="text-white/80 text-xs font-bold">9:41</span>
+                    <div className="flex gap-1.5">
+                        <div className="w-4 h-2.5 bg-white/80 rounded-[1px]"></div>
+                        <div className="w-0.5 h-2.5 bg-white/30 rounded-[1px]"></div>
+                    </div>
                 </div>
-              ))}
-            </div>
+                {/* Notch */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-charcoal rounded-b-2xl z-20"></div>
+             </div>
+             
+             {/* Decorative Background Blob behind phone */}
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[80%] bg-tomato/20 blur-[100px] -z-10"></div>
+          </div>
+
+          {/* RIGHT: The Controls (Story Mode) */}
+          <div className="w-full lg:w-7/12 flex flex-col justify-center gap-4">
+             {cycleSteps.map((step, index) => (
+                <button
+                  key={index}
+                  onClick={() => setStep(index)}
+                  className={`text-left group relative p-6 rounded-3xl transition-all duration-300 ${
+                      activeStep === index 
+                      ? 'bg-white shadow-soft scale-100' 
+                      : 'hover:bg-white/50 scale-95 opacity-60 hover:opacity-100'
+                  }`}
+                >
+                   {/* Progress Bar (Only visible when active) */}
+                   {activeStep === index && (
+                       <div className="absolute bottom-0 left-6 right-6 h-1 bg-stone-100 rounded-full overflow-hidden">
+                           <div 
+                              className="h-full bg-tomato transition-all duration-100 ease-linear"
+                              style={{ width: `${progress}%` }}
+                           ></div>
+                       </div>
+                   )}
+
+                   <div className="flex items-center justify-between mb-2">
+                       <h3 className="text-xl md:text-2xl font-bold text-charcoal">{step.title}</h3>
+                       <span className="text-xs font-bold uppercase text-text-muted/50 tracking-wider hidden md:block">{step.subtitle}</span>
+                   </div>
+                   <p className="text-text-muted leading-relaxed font-medium max-w-md">
+                       {step.description}
+                   </p>
+                </button>
+             ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

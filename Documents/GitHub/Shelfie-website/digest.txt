@@ -1,0 +1,5813 @@
+Directory structure:
+└── Shelfie-website/
+    ├── README.md
+    ├── eslint.config.mjs
+    ├── next.config.mjs
+    ├── package.json
+    ├── postcss.config.mjs
+    ├── tailwind.config.ts
+    ├── tsconfig.json
+    ├── public/
+    │   ├── avatar-1.webp
+    │   ├── avatar-2.webp
+    │   ├── avatar-3.webp
+    │   ├── banner-1.webp
+    │   ├── banner-2.webp
+    │   ├── banner-3.webp
+    │   ├── banner-4.webp
+    │   ├── cubes.webp
+    │   ├── cycle-1.webp
+    │   ├── cycle-3.webp
+    │   ├── feature-1.webp
+    │   ├── feature-2.webp
+    │   ├── hero-image.webp
+    │   ├── impact-1.webp
+    │   ├── impact-2.webp
+    │   ├── badges/
+    │   └── icons/
+    │       ├── CLAUDE.md
+    │       ├── appliances/
+    │       │   ├── air_fryer.webp
+    │       │   ├── baking_cooling_rack.webp
+    │       │   ├── baking_sheet.webp
+    │       │   ├── bbq.webp
+    │       │   ├── blender.webp
+    │       │   ├── bread_proofing_box.webp
+    │       │   ├── cake_pan.webp
+    │       │   ├── cookie_jar.webp
+    │       │   ├── cutting_board.webp
+    │       │   ├── electric_kettle.webp
+    │       │   ├── frying_pan.webp
+    │       │   ├── grinder.webp
+    │       │   ├── juice_extractor.webp
+    │       │   ├── kettle.webp
+    │       │   ├── microwave.webp
+    │       │   ├── muffin_tin.webp
+    │       │   ├── oven.webp
+    │       │   ├── sous_vide.webp
+    │       │   ├── stand_mixer.webp
+    │       │   ├── stove.webp
+    │       │   ├── toaster.webp
+    │       │   ├── waffle_maker.webp
+    │       │   └── wok.webp
+    │       ├── diets/
+    │       │   ├── dairy_free.webp
+    │       │   ├── egg_free.webp
+    │       │   ├── fish_free.webp
+    │       │   ├── gluten_free.webp
+    │       │   ├── halal.webp
+    │       │   ├── heart_healthy.webp
+    │       │   ├── ketogenic.webp
+    │       │   ├── kosher.webp
+    │       │   ├── lactose_intolerant.webp
+    │       │   ├── low_carb.webp
+    │       │   ├── low_sodium.webp
+    │       │   ├── nut_free.webp
+    │       │   ├── nutella.webp
+    │       │   ├── paleo.webp
+    │       │   ├── peanut_free.webp
+    │       │   ├── pesca.webp
+    │       │   ├── pescatarian.webp
+    │       │   ├── shellfish_free.webp
+    │       │   ├── soy_free.webp
+    │       │   ├── sugar_free.webp
+    │       │   ├── vegan.webp
+    │       │   └── vegetarian.webp
+    │       ├── food_rooms/
+    │       │   ├── bread_box.webp
+    │       │   ├── breakroom_fridge.webp
+    │       │   ├── cookie_jar.webp
+    │       │   ├── drawer.webp
+    │       │   ├── freezer.webp
+    │       │   ├── fridge.webp
+    │       │   ├── fridge_door.webp
+    │       │   ├── fridge_drawer.webp
+    │       │   ├── mini_fridge.webp
+    │       │   ├── pantry.webp
+    │       │   ├── pantry_empty.webp
+    │       │   ├── root_cellar.webp
+    │       │   ├── shelf.webp
+    │       │   └── spices.webp
+    │       ├── ingredient_types/
+    │       │   ├── alcohol.webp
+    │       │   ├── cereal.webp
+    │       │   ├── dumplings.webp
+    │       │   ├── herbs.webp
+    │       │   ├── meat.webp
+    │       │   ├── other.webp
+    │       │   └── soda.webp
+    │       ├── ingredients/
+    │       │   ├── acai.webp
+    │       │   ├── agedashi_tofu.webp
+    │       │   ├── aioli.webp
+    │       │   ├── air_fryer.webp
+    │       │   ├── anise.webp
+    │       │   ├── apple.webp
+    │       │   ├── apple_pie.webp
+    │       │   ├── apricot.webp
+    │       │   ├── arepa.webp
+    │       │   ├── artichoke.webp
+    │       │   ├── avocado.webp
+    │       │   ├── baba_ganoush.webp
+    │       │   ├── bacon.webp
+    │       │   ├── bacon_jam.webp
+    │       │   ├── bag_of_ice.webp
+    │       │   ├── bag_of_rice.webp
+    │       │   ├── bagel.webp
+    │       │   ├── baguette.webp
+    │       │   ├── baking_soda.webp
+    │       │   ├── balsamic.webp
+    │       │   ├── bamboo_steamer.webp
+    │       │   ├── banana.webp
+    │       │   ├── banana_bunch.webp
+    │       │   ├── basil.webp
+    │       │   ├── bay_leaf.webp
+    │       │   ├── bean.webp
+    │       │   ├── beef_jerky.webp
+    │       │   ├── beer.webp
+    │       │   ├── beet.webp
+    │       │   ├── bellpepper.webp
+    │       │   ├── berry.webp
+    │       │   ├── black_pepper.webp
+    │       │   ├── blood_orange.webp
+    │       │   ├── blood_sausage.webp
+    │       │   ├── blue_cheese.webp
+    │       │   ├── blueberry.webp
+    │       │   ├── bolognese.webp
+    │       │   ├── bread.webp
+    │       │   ├── breadcrumbs.webp
+    │       │   ├── brie_cheese.webp
+    │       │   ├── brioche.webp
+    │       │   ├── broccoli.webp
+    │       │   ├── brownies.webp
+    │       │   ├── brussels_sprouts.webp
+    │       │   ├── bun.webp
+    │       │   ├── buratta.webp
+    │       │   ├── burger.webp
+    │       │   ├── butter.webp
+    │       │   ├── butter_board.webp
+    │       │   ├── cabbage.webp
+    │       │   ├── can_of_chili.webp
+    │       │   ├── canned.webp
+    │       │   ├── canned_tuna.webp
+    │       │   ├── caramel_apple.webp
+    │       │   ├── carrot.webp
+    │       │   ├── cauliflower.webp
+    │       │   ├── caviar.webp
+    │       │   ├── celery.webp
+    │       │   ├── cereal.webp
+    │       │   ├── cereal_container.webp
+    │       │   ├── charred_broccoli.webp
+    │       │   ├── cheese.webp
+    │       │   ├── cherries.webp
+    │       │   ├── cherry_tomato.webp
+    │       │   ├── chia.webp
+    │       │   ├── chia_pudding.webp
+    │       │   ├── chicken.webp
+    │       │   ├── chickpea.webp
+    │       │   ├── chili.webp
+    │       │   ├── chili_crisp.webp
+    │       │   ├── chili_dog.webp
+    │       │   ├── chinese_green_tea.webp
+    │       │   ├── chips.webp
+    │       │   ├── chives.webp
+    │       │   ├── chocolate.webp
+    │       │   ├── chocolate_pie.webp
+    │       │   ├── chocolate_strawberry.webp
+    │       │   ├── chopped_vegetables.webp
+    │       │   ├── cider.webp
+    │       │   ├── cloudberry.webp
+    │       │   ├── cocoa.webp
+    │       │   ├── coconut.webp
+    │       │   ├── coconut_water.webp
+    │       │   ├── coffee.webp
+    │       │   ├── coffee_grains.webp
+    │       │   ├── coke.webp
+    │       │   ├── cookie.webp
+    │       │   ├── corn.webp
+    │       │   ├── corndog.webp
+    │       │   ├── couscous.webp
+    │       │   ├── crab_apple.webp
+    │       │   ├── cracker.webp
+    │       │   ├── cranberry.webp
+    │       │   ├── cranberry_sauce.webp
+    │       │   ├── crepe.webp
+    │       │   ├── crispy_cauliflower_bites.webp
+    │       │   ├── crumpet.webp
+    │       │   ├── cucumber.webp
+    │       │   ├── currant.webp
+    │       │   ├── date.webp
+    │       │   ├── dijon.webp
+    │       │   ├── dim_sum.webp
+    │       │   ├── doner.webp
+    │       │   ├── dough.webp
+    │       │   ├── dough_mixer.webp
+    │       │   ├── dozen_egg.webp
+    │       │   ├── dragonfruit.webp
+    │       │   ├── dried_mango.webp
+    │       │   ├── dumplings.webp
+    │       │   ├── eclaire.webp
+    │       │   ├── edamame.webp
+    │       │   ├── egg.webp
+    │       │   ├── egg_in_a_hole.webp
+    │       │   ├── eggnog.webp
+    │       │   ├── eggplant.webp
+    │       │   ├── eggpoacher.webp
+    │       │   ├── eggs.webp
+    │       │   ├── empanada.webp
+    │       │   ├── empty_food_box.webp
+    │       │   ├── energy_drink.webp
+    │       │   ├── everything_bagel.webp
+    │       │   ├── expired_meat.webp
+    │       │   ├── farfalle.webp
+    │       │   ├── fig.webp
+    │       │   ├── fish.webp
+    │       │   ├── flat_peach.webp
+    │       │   ├── food_box.webp
+    │       │   ├── freeze_dried_strawberry.webp
+    │       │   ├── french_fries.webp
+    │       │   ├── fried_cheese_curds.webp
+    │       │   ├── fried_oyster_poboy.webp
+    │       │   ├── fruit_loops.webp
+    │       │   ├── fruits.webp
+    │       │   ├── garlic.webp
+    │       │   ├── garlic_clove.webp
+    │       │   ├── garlic_powder.webp
+    │       │   ├── ginger.webp
+    │       │   ├── gnocchi.webp
+    │       │   ├── gouda.webp
+    │       │   ├── granola.webp
+    │       │   ├── grape.webp
+    │       │   ├── grape_leaf.webp
+    │       │   ├── grape_tomatoes.webp
+    │       │   ├── grapefruit.webp
+    │       │   ├── gravy.webp
+    │       │   ├── grilled_cheese_sandwich.webp
+    │       │   ├── guacamole.webp
+    │       │   ├── guava.webp
+    │       │   ├── gumdrop.webp
+    │       │   ├── halloumi.webp
+    │       │   ├── ham.webp
+    │       │   ├── hamburger.webp
+    │       │   ├── hard_cheese.webp
+    │       │   ├── hazelnut.webp
+    │       │   ├── heavy_cream.webp
+    │       │   ├── herb_butter.webp
+    │       │   ├── honey.webp
+    │       │   ├── honeycomb.webp
+    │       │   ├── honeycrisp_apple.webp
+    │       │   ├── horseradish.webp
+    │       │   ├── hot_dog.webp
+    │       │   ├── hot_honey.webp
+    │       │   ├── hot_sauce.webp
+    │       │   ├── hurry.webp
+    │       │   ├── ice.webp
+    │       │   ├── ice_cream.webp
+    │       │   ├── instant_ramen.webp
+    │       │   ├── instant_rice.webp
+    │       │   ├── jalapeno.webp
+    │       │   ├── jam.webp
+    │       │   ├── jar_of_pickles.webp
+    │       │   ├── jelly_beans.webp
+    │       │   ├── juice.webp
+    │       │   ├── kaffir.webp
+    │       │   ├── ketchup.webp
+    │       │   ├── key_lime_pie.webp
+    │       │   ├── kiwi.webp
+    │       │   ├── kohlrabi.webp
+    │       │   ├── kwek_kwek.webp
+    │       │   ├── lamb_kofta.webp
+    │       │   ├── lasagne.webp
+    │       │   ├── lemon.webp
+    │       │   ├── lemon_juicer.webp
+    │       │   ├── lemonade.webp
+    │       │   ├── lentils.webp
+    │       │   ├── lime.webp
+    │       │   ├── lobster.webp
+    │       │   ├── lobster_mac_cheese.webp
+    │       │   ├── lobster_roll.webp
+    │       │   ├── lunch_tray.webp
+    │       │   ├── mac_and_cheese.webp
+    │       │   ├── mango.webp
+    │       │   ├── mangosteen.webp
+    │       │   ├── maple.webp
+    │       │   ├── maple_bacon_donut.webp
+    │       │   ├── maple_syrup.webp
+    │       │   ├── mashed_potatoes.webp
+    │       │   ├── matcha.webp
+    │       │   ├── mayonnaise.webp
+    │       │   ├── meatballs.webp
+    │       │   ├── milk.webp
+    │       │   ├── milk_carton.webp
+    │       │   ├── mince_pie.webp
+    │       │   ├── mint.webp
+    │       │   ├── miso.webp
+    │       │   ├── missing_items.webp
+    │       │   ├── molasses_cookie.webp
+    │       │   ├── mozzarella.webp
+    │       │   ├── mulled_wine.webp
+    │       │   ├── mushroom.webp
+    │       │   ├── mustard.webp
+    │       │   ├── nachos.webp
+    │       │   ├── noodle_strainer.webp
+    │       │   ├── noodles.webp
+    │       │   ├── nori.webp
+    │       │   ├── nugget.webp
+    │       │   ├── nutella.webp
+    │       │   ├── oats.webp
+    │       │   ├── oil.webp
+    │       │   ├── okra.webp
+    │       │   ├── olive.webp
+    │       │   ├── olive_oil.webp
+    │       │   ├── onion_bloom.webp
+    │       │   ├── onion_rings.webp
+    │       │   ├── orange.webp
+    │       │   ├── orange_juice.webp
+    │       │   ├── orange_wine.webp
+    │       │   ├── pancakes.webp
+    │       │   ├── papaya.webp
+    │       │   ├── paprika.webp
+    │       │   ├── parmesan.webp
+    │       │   ├── parsnip.webp
+    │       │   ├── passionfruit.webp
+    │       │   ├── pasta.webp
+    │       │   ├── pasta_maker.webp
+    │       │   ├── pastel_frito.webp
+    │       │   ├── peach.webp
+    │       │   ├── peanut.webp
+    │       │   ├── peas.webp
+    │       │   ├── pecan.webp
+    │       │   ├── pepperjack_cheese.webp
+    │       │   ├── peppermint.webp
+    │       │   ├── persian_saffron_rice.webp
+    │       │   ├── pesto.webp
+    │       │   ├── pickleback.webp
+    │       │   ├── pickled_herring.webp
+    │       │   ├── pineapple.webp
+    │       │   ├── pinenut.webp
+    │       │   ├── pistaccio_butter.webp
+    │       │   ├── pistachio.webp
+    │       │   ├── pizza.webp
+    │       │   ├── plum.webp
+    │       │   ├── pomegranate.webp
+    │       │   ├── pomegranate_molasses.webp
+    │       │   ├── pomelo.webp
+    │       │   ├── popcorn.webp
+    │       │   ├── potato.webp
+    │       │   ├── pudding.webp
+    │       │   ├── pumpkin.webp
+    │       │   ├── pumpkin_pie.webp
+    │       │   ├── pumpkin_seeds.webp
+    │       │   ├── pumpkin_spice_latte.webp
+    │       │   ├── purple_yam.webp
+    │       │   ├── quinoa.webp
+    │       │   ├── rain.webp
+    │       │   ├── rainbow_carrot.webp
+    │       │   ├── raisins.webp
+    │       │   ├── ramps.webp
+    │       │   ├── raspberry.webp
+    │       │   ├── ratatouille.webp
+    │       │   ├── ready_to_eat.webp
+    │       │   ├── rhubarb.webp
+    │       │   ├── rice.webp
+    │       │   ├── roasted_potatoes.webp
+    │       │   ├── roe.webp
+    │       │   ├── rosemary.webp
+    │       │   ├── rye_crispbread.webp
+    │       │   ├── salami.webp
+    │       │   ├── salt.webp
+    │       │   ├── sandwich_bag.webp
+    │       │   ├── sauce.webp
+    │       │   ├── sausage.webp
+    │       │   ├── scallop.webp
+    │       │   ├── sesame.webp
+    │       │   ├── shawarma.webp
+    │       │   ├── shrimp.webp
+    │       │   ├── silver.webp
+    │       │   ├── skittles.webp
+    │       │   ├── sliced_onion.webp
+    │       │   ├── smoked_almonds.webp
+    │       │   ├── smoked_herring.webp
+    │       │   ├── soda.webp
+    │       │   ├── soup.webp
+    │       │   ├── sourdough bread.webp
+    │       │   ├── soy_beans.webp
+    │       │   ├── sparkling_coffee.webp
+    │       │   ├── spinach.webp
+    │       │   ├── sprinkles.webp
+    │       │   ├── squid_ink_pasta.webp
+    │       │   ├── strawberry.webp
+    │       │   ├── strawberry_jam.webp
+    │       │   ├── stroopwafel.webp
+    │       │   ├── stuffing.webp
+    │       │   ├── sugar.webp
+    │       │   ├── sugar_bag.webp
+    │       │   ├── sumac.webp
+    │       │   ├── sunflower_oil.webp
+    │       │   ├── sunflower_seed.webp
+    │       │   ├── sushi.webp
+    │       │   ├── sweet_potato.webp
+    │       │   ├── swordfish_steak.webp
+    │       │   ├── szechuan.webp
+    │       │   ├── tabasco.webp
+    │       │   ├── tacos.webp
+    │       │   ├── tahini.webp
+    │       │   ├── tamales.webp
+    │       │   ├── tamarillo.webp
+    │       │   ├── tamarind.webp
+    │       │   ├── tangerine.webp
+    │       │   ├── tapenade.webp
+    │       │   ├── tapioca.webp
+    │       │   ├── tea.webp
+    │       │   ├── tempura.webp
+    │       │   ├── tequila.webp
+    │       │   ├── thyme.webp
+    │       │   ├── tick.webp
+    │       │   ├── tinned_anchovy.webp
+    │       │   ├── tinned_fish.webp
+    │       │   ├── toast.webp
+    │       │   ├── tofu.webp
+    │       │   ├── tomato.webp
+    │       │   ├── tongs.webp
+    │       │   ├── tortilla.webp
+    │       │   ├── truffle_fries.webp
+    │       │   ├── tumeric.webp
+    │       │   ├── tumeric_latte.webp
+    │       │   ├── tuna_melt.webp
+    │       │   ├── turkey.webp
+    │       │   ├── uncooked_pasta.webp
+    │       │   ├── vanilla.webp
+    │       │   ├── vegemite.webp
+    │       │   ├── vinegar.webp
+    │       │   ├── vitamin_gummy.webp
+    │       │   ├── vodka.webp
+    │       │   ├── walnut.webp
+    │       │   ├── wasabi.webp
+    │       │   ├── water.webp
+    │       │   ├── water_bottle.webp
+    │       │   ├── water_jar.webp
+    │       │   ├── watermelon.webp
+    │       │   ├── white_asparagus.webp
+    │       │   ├── white_wine.webp
+    │       │   ├── wild_truffle.webp
+    │       │   ├── wildberry.webp
+    │       │   ├── wine.webp
+    │       │   ├── yogurt.webp
+    │       │   ├── yorkshire_pudding.webp
+    │       │   ├── zaatar_flatbread.webp
+    │       │   ├── zucchini.webp
+    │       │   └── zucchini_noodles.webp
+    │       ├── interface/
+    │       │   ├── achievement.webp
+    │       │   ├── ad_free.webp
+    │       │   ├── add_calendar.webp
+    │       │   ├── ai_magic.webp
+    │       │   ├── allergens.webp
+    │       │   ├── animation_enhanced.webp
+    │       │   ├── animation_reduced.webp
+    │       │   ├── animation_standard.webp
+    │       │   ├── answer.webp
+    │       │   ├── archive.webp
+    │       │   ├── arrow_left.webp
+    │       │   ├── arrow_right.webp
+    │       │   ├── autumn.webp
+    │       │   ├── award.webp
+    │       │   ├── bookmark.webp
+    │       │   ├── bronze.webp
+    │       │   ├── calendar.webp
+    │       │   ├── cart.webp
+    │       │   ├── challenge.webp
+    │       │   ├── change_password.webp
+    │       │   ├── check.webp
+    │       │   ├── chefs_kiss.webp
+    │       │   ├── clock.webp
+    │       │   ├── cloud.webp
+    │       │   ├── comment.webp
+    │       │   ├── cooking_mode.webp
+    │       │   ├── db.webp
+    │       │   ├── debug.webp
+    │       │   ├── delivery.webp
+    │       │   ├── digital_clock.webp
+    │       │   ├── discount.webp
+    │       │   ├── dislike.webp
+    │       │   ├── do_not_enter.webp
+    │       │   ├── down.webp
+    │       │   ├── drag_handle.webp
+    │       │   ├── eco_leaf.webp
+    │       │   ├── edit.webp
+    │       │   ├── effort.webp
+    │       │   ├── error.webp
+    │       │   ├── exclamation_point.webp
+    │       │   ├── failed.webp
+    │       │   ├── favorite.webp
+    │       │   ├── feedback.webp
+    │       │   ├── fire.webp
+    │       │   ├── food_box.webp
+    │       │   ├── forgot_password.webp
+    │       │   ├── gauge.webp
+    │       │   ├── glass_chart.webp
+    │       │   ├── glasses.webp
+    │       │   ├── golden_heart.webp
+    │       │   ├── groceries.webp
+    │       │   ├── grocery.webp
+    │       │   ├── grocery_receipt.webp
+    │       │   ├── hashtag.webp
+    │       │   ├── health_journal.webp
+    │       │   ├── healthy_food.webp
+    │       │   ├── heart.webp
+    │       │   ├── home.webp
+    │       │   ├── hourglass.webp
+    │       │   ├── important.webp
+    │       │   ├── info.webp
+    │       │   ├── inventory.webp
+    │       │   ├── keys.webp
+    │       │   ├── kitchen.webp
+    │       │   ├── leaderboard.webp
+    │       │   ├── leftover_container.webp
+    │       │   ├── lightbulb.webp
+    │       │   ├── link.webp
+    │       │   ├── list.webp
+    │       │   ├── location.webp
+    │       │   ├── location_pin.webp
+    │       │   ├── logbook.webp
+    │       │   ├── magic.webp
+    │       │   ├── measuring_cup.webp
+    │       │   ├── more_options.webp
+    │       │   ├── nutrition.webp
+    │       │   ├── nutrition_chart.webp
+    │       │   ├── offer.webp
+    │       │   ├── one.webp
+    │       │   ├── palette.webp
+    │       │   ├── password.webp
+    │       │   ├── plus.webp
+    │       │   ├── preparation_mode.webp
+    │       │   ├── prize.webp
+    │       │   ├── profile.webp
+    │       │   ├── receipt.webp
+    │       │   ├── recipe_box.webp
+    │       │   ├── recipe_card.webp
+    │       │   ├── recipes.webp
+    │       │   ├── record.webp
+    │       │   ├── refresh.webp
+    │       │   ├── reverse.webp
+    │       │   ├── review.webp
+    │       │   ├── save.webp
+    │       │   ├── scan.webp
+    │       │   ├── schedule.webp
+    │       │   ├── scroll.webp
+    │       │   ├── search.webp
+    │       │   ├── settings.webp
+    │       │   ├── share.webp
+    │       │   ├── sign_in.webp
+    │       │   ├── sign_out.webp
+    │       │   ├── sos.webp
+    │       │   ├── spice_rack.webp
+    │       │   ├── star.webp
+    │       │   ├── store_mode.webp
+    │       │   ├── subscription.webp
+    │       │   ├── team.webp
+    │       │   ├── thumbs_up.webp
+    │       │   ├── timer.webp
+    │       │   ├── todo.webp
+    │       │   ├── trash.webp
+    │       │   ├── trending_down.webp
+    │       │   ├── unknown.webp
+    │       │   ├── up.webp
+    │       │   ├── upload.webp
+    │       │   ├── waiting.webp
+    │       │   ├── warning.webp
+    │       │   ├── warning_circle.webp
+    │       │   ├── win.webp
+    │       │   ├── wishlist.webp
+    │       │   ├── world.webp
+    │       │   ├── x.webp
+    │       │   ├── x_circle.webp
+    │       │   └── xp.webp
+    │       ├── kitchen_tools/
+    │       │   ├── butchers_cleaver.webp
+    │       │   ├── chopsticks.webp
+    │       │   ├── dining_plate.webp
+    │       │   ├── egg_separator.webp
+    │       │   ├── fork.webp
+    │       │   ├── grater.webp
+    │       │   ├── kitchen_knife.webp
+    │       │   ├── kitchen_utensils.webp
+    │       │   ├── knife.webp
+    │       │   ├── knives.webp
+    │       │   ├── measuring_spoon.webp
+    │       │   ├── meat_tenderizer.webp
+    │       │   ├── nut_cracker.webp
+    │       │   ├── potato_masher.webp
+    │       │   ├── scale.webp
+    │       │   ├── spatula.webp
+    │       │   ├── spoon.webp
+    │       │   └── whisk.webp
+    │       ├── meal_categories/
+    │       │   ├── american.webp
+    │       │   ├── aperativo.webp
+    │       │   ├── appetizer.webp
+    │       │   ├── baking.webp
+    │       │   ├── chinese.webp
+    │       │   ├── french.webp
+    │       │   ├── greek.webp
+    │       │   ├── indian.webp
+    │       │   ├── italian.webp
+    │       │   ├── japanese.webp
+    │       │   ├── korean.webp
+    │       │   ├── mexican.webp
+    │       │   ├── middle_eastern.webp
+    │       │   ├── picnic.webp
+    │       │   ├── salad.webp
+    │       │   ├── sandwich.webp
+    │       │   ├── side_dish.webp
+    │       │   ├── snack.webp
+    │       │   ├── soup.webp
+    │       │   ├── spanish.webp
+    │       │   └── thai.webp
+    │       ├── meal_types/
+    │       │   ├── breakfast.webp
+    │       │   ├── dessert.webp
+    │       │   ├── dinner.webp
+    │       │   ├── drink.webp
+    │       │   ├── lunch.webp
+    │       │   ├── main.webp
+    │       │   ├── sandwich.webp
+    │       │   ├── side.webp
+    │       │   ├── sides.webp
+    │       │   └── snack.webp
+    │       └── nutrition/
+    │           ├── cal.webp
+    │           ├── carb.webp
+    │           ├── fat.webp
+    │           ├── fiber.webp
+    │           ├── glucose.webp
+    │           ├── protein.webp
+    │           ├── sodium.webp
+    │           └── sugar.webp
+    ├── src/
+    │   ├── app/
+    │   │   ├── globals.css
+    │   │   ├── layout.tsx
+    │   │   └── page.tsx
+    │   └── components/
+    │       ├── AppStoreBadge.tsx
+    │       ├── Cta.tsx
+    │       ├── Cycle.tsx
+    │       ├── Features.tsx
+    │       ├── Footer.tsx
+    │       ├── GooglePlayBadge.tsx
+    │       ├── Hero.tsx
+    │       ├── Impact.tsx
+    │       └── ScrollingBanner.tsx
+    └── .windsurf/
+        └── settings.json
+
+================================================
+File: README.md
+================================================
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+================================================
+File: eslint.config.mjs
+================================================
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
+
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
+  // Override default ignores of eslint-config-next.
+  globalIgnores([
+    // Default ignores of eslint-config-next:
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+  ]),
+]);
+
+export default eslintConfig;
+
+
+
+================================================
+File: next.config.mjs
+================================================
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  /* config options here */
+};
+
+export default nextConfig;
+
+
+
+================================================
+File: package.json
+================================================
+{
+  "name": "shelfie-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.22",
+    "next": "15.3.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
+
+
+
+================================================
+File: postcss.config.mjs
+================================================
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+
+
+
+================================================
+File: tailwind.config.ts
+================================================
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "cream": "#FFFBF2",
+        "cream-dark": "#F2EBE0",
+        "charcoal": "#1A1A1A",
+        "tomato": "#E53E3E",
+        "stem": "#48BB78",
+        "text-main": "#2D2D2D",
+        "text-muted": "#5A5A5A",
+        "card-bg": "#FFFFFF",
+      },
+      fontFamily: {
+        "display": "var(--font-display)",
+        "body": "var(--font-body)",
+      },
+      borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px" },
+      boxShadow: {
+        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+        'glow': '0 0 20px rgba(229, 62, 62, 0.3)',
+        'hard': '4px 4px 0px 0px rgba(26,26,26,1)'
+      },
+      animation: {
+        'scroll': 'scroll 40s linear infinite',
+      },
+      keyframes: {
+        'scroll': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        }
+      }
+    },
+  },
+  plugins: [],
+};
+export default config;
+
+
+
+================================================
+File: tsconfig.json
+================================================
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+
+
+
+================================================
+File: public/avatar-1.webp
+================================================
+
+
+
+================================================
+File: public/avatar-2.webp
+================================================
+
+
+
+================================================
+File: public/avatar-3.webp
+================================================
+
+
+
+================================================
+File: public/banner-1.webp
+================================================
+
+
+
+================================================
+File: public/banner-2.webp
+================================================
+
+
+
+================================================
+File: public/banner-3.webp
+================================================
+
+
+
+================================================
+File: public/banner-4.webp
+================================================
+
+
+
+================================================
+File: public/cubes.webp
+================================================
+
+
+
+================================================
+File: public/cycle-1.webp
+================================================
+
+
+
+================================================
+File: public/cycle-3.webp
+================================================
+
+
+
+================================================
+File: public/feature-1.webp
+================================================
+
+
+
+================================================
+File: public/feature-2.webp
+================================================
+
+
+
+================================================
+File: public/hero-image.webp
+================================================
+
+
+
+================================================
+File: public/impact-1.webp
+================================================
+
+
+
+================================================
+File: public/impact-2.webp
+================================================
+
+
+
+
+================================================
+File: public/icons/CLAUDE.md
+================================================
+# Iconography Guide (ICONS.md)
+
+This document provides the specification for all icons used within the Shelfie application. It serves as the single source of truth for designers and developers to ensure visual consistency and clarity.
+
+## Philosophy 📜
+
+Our icons are designed to be **simple, clear, and instantly recognizable**. They are always rendered as monochrome (single-color) assets from `.png` files. **Color is never baked into the icon file itself.** Instead, color is applied dynamically in the app using the `AppColors` theme primitives, allowing icons to adapt to different states (like active or disabled) and themes.
+
+## Table of Contents
+
+- [Asset Structure](#asset-structure)
+- [Icon Types](#icon-types)
+- [Usage](#usage)
+- [Implementation Details](#implementation-details)
+- [Adding New Icons](#adding-new-icons)
+
+## Asset Structure
+
+All icon assets are organized in the following directory structure:
+
+```
+assets/icons/
+├── appliances/        # Kitchen appliances (oven, blender, etc.)
+├── diets/             # Dietary restrictions (vegan, gluten-free, etc.)
+├── food_rooms/        # Storage locations (pantry, fridge, etc.)
+├── gamification/      # Achievement and game elements
+├── ingredient_types/  # Categories of ingredients
+├── ingredients/       # Individual food items
+├── interface/         # UI elements
+├── kitchen_tools/     # Cooking utensils
+├── meal_categories/   # Types of dishes
+├── meal_types/        # Meal times (breakfast, lunch, etc.)
+└── nutrition/         # Nutritional information
+```
+
+## Icon Types
+
+| Type                | Path                             | Fallback Icon                      | Description                                   |
+| ------------------- | -------------------------------- | ---------------------------------- | --------------------------------------------- |
+| Appliance           | `assets/icons/appliances/`       | `Icons.kitchen_outlined`           | Kitchen appliances like ovens, blenders, etc. |
+| Diet                | `assets/icons/diets/`            | `Icons.eco_outlined`               | Dietary restrictions and preferences          |
+| Meal Category       | `assets/icons/meal_categories/`  | `Icons.tapas_outlined`             | Types of dishes                               |
+| Food Room           | `assets/icons/food_rooms/`       | `Icons.inventory_2_outlined`       | Storage locations                             |
+| Gamification        | `assets/icons/gamification/`     | `Icons.emoji_events_outlined`      | Achievement and game elements                 |
+| Ingredient          | `assets/icons/ingredients/`      | `Icons.restaurant_menu_outlined`   | Food items                                    |
+| Ingredient Category | `assets/icons/ingredient_types/` | `Icons.category_outlined`          | Types of ingredients                          |
+| Interface           | `assets/icons/interface/`        | `Icons.info_outline`               | UI elements                                   |
+| Kitchen Tool        | `assets/icons/kitchen_tools/`    | `Icons.handyman_outlined`          | Cooking utensils                              |
+| Meal Type           | `assets/icons/meal_types/`       | `Icons.dinner_dining_outlined`     | Meal times                                    |
+| Nutrition           | `assets/icons/nutrition/`        | `Icons.health_and_safety_outlined` | Nutritional information                       |
+
+## Usage
+
+### Basic Usage
+
+```dart
+// Appliance icon
+AppIcons.appliance('oven', size: 32);
+
+// Diet icon
+AppIcons.diet('vegan', color: Colors.green);
+
+// Food icon with fallback logic
+FoodIcon(
+  name: 'Granny Smith Apples',
+  coreName: 'apple',
+  category: 'fruit',
+  size: 40,
+);
+```
+
+### Available Icons
+
+#### Appliances
+
+- `air_fryer.png`
+- `baking_cooling_rack.png`
+- `baking_sheet.png`
+- `bbq.png`
+- `blender.png`
+- `cake_pan.png`
+- `cutting_board.png`
+- `electric_kettle.png`
+- `frying_pan.png`
+- `grinder.png`
+- `kettle.png`
+- `microwave.png`
+- `muffin_tin.png`
+- `oven.png`
+- `sous_vide.png`
+- `stand_mixer.png`
+- `stove.png`
+- `toaster.png`
+- `waffle_maker.png`
+- `wok.png`
+
+#### Diets
+
+- `dairy_free.png`
+- `egg_free.png`
+- `fish_free.png`
+- `gluten_free.png`
+- `halal.png`
+- `heart_healthy.png`
+- `ketogenic.png`
+- `kosher.png`
+- `lactose_intolerant.png`
+- `low_carb.png`
+- `low_sodium.png`
+- `nut_free.png`
+- `nutella.png`
+- `paleo.png`
+- `peanut_free.png`
+- `pesca.png`
+- `pescatarian.png`
+- `shellfish_free.png`
+- `soy_free.png`
+- `sugar_free.png`
+- `vegan.png`
+- `vegetarian.png`
+
+#### Food Rooms
+
+- `bread_box.png`
+- `breakroom_fridge.png`
+- `cookie.png`
+- `freezer.png`
+- `fridge.png`
+
+## Implementation Details
+
+### AppIcons Class
+
+The `AppIcons` class provides a semantic API for accessing all application icons. It includes methods for each icon type:
+
+- `appliance()` - Kitchen appliances
+- `diet()` - Dietary restrictions
+- `mealCategory()` - Dish categories
+- `foodRoom()` - Storage locations
+- `gamification()` - Achievement icons
+- `interface()` - UI elements
+- `kitchenTool()` - Cooking utensils
+- `mealType()` - Meal times
+- `nutrition()` - Nutritional information
+- `ingredient()` - Food items
+- `food()` - Smart food icon with fallback system
+
+### FoodIcon Widget
+
+The `FoodIcon` widget provides a multi-level fallback system for food icons. It attempts to find the most appropriate icon in this order:
+
+1. The specified `coreName`
+2. The singular form of the `name`
+3. The first word of the `name`
+4. The specified `category`
+
+## Adding New Icons
+
+### Naming Convention
+
+- Use lowercase
+- Separate words with underscores
+- No special characters
+- Maximum 3 words
+- Use singular form for ingredients
+
+Example transformations:
+
+- "Food Processor" → `food_processor.png`
+- "Granny Smith Apples" → `granny_smith_apples.png`
+- "Measuring cups" → `measuring_cup.png`
+
+### Steps to Add Icons
+
+1. Place the icon in the appropriate category directory under `assets/icons/`
+2. Follow the naming convention
+3. The icon will be automatically available through the `AppIcons` class
+4. For food icons, ensure the name is in singular form
+
+
+
+================================================
+File: public/icons/appliances/air_fryer.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/baking_cooling_rack.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/baking_sheet.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/bbq.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/blender.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/bread_proofing_box.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/cake_pan.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/cookie_jar.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/cutting_board.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/electric_kettle.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/frying_pan.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/grinder.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/juice_extractor.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/kettle.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/microwave.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/muffin_tin.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/oven.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/sous_vide.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/stand_mixer.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/stove.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/toaster.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/waffle_maker.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/appliances/wok.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/dairy_free.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/egg_free.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/fish_free.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/gluten_free.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/halal.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/heart_healthy.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/ketogenic.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/kosher.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/lactose_intolerant.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/low_carb.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/low_sodium.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/nut_free.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/nutella.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/paleo.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/peanut_free.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/pesca.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/pescatarian.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/shellfish_free.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/soy_free.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/sugar_free.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/vegan.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/diets/vegetarian.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/food_rooms/bread_box.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/food_rooms/breakroom_fridge.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/food_rooms/cookie_jar.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/food_rooms/drawer.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/food_rooms/freezer.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/food_rooms/fridge.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/food_rooms/fridge_door.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/food_rooms/fridge_drawer.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/food_rooms/mini_fridge.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/food_rooms/pantry.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/food_rooms/pantry_empty.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/food_rooms/root_cellar.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/food_rooms/shelf.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/food_rooms/spices.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredient_types/alcohol.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredient_types/cereal.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredient_types/dumplings.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredient_types/herbs.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredient_types/meat.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredient_types/other.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredient_types/soda.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/acai.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/agedashi_tofu.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/aioli.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/air_fryer.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/anise.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/apple.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/apple_pie.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/apricot.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/arepa.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/artichoke.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/avocado.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/baba_ganoush.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/bacon.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/bacon_jam.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/bag_of_ice.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/bag_of_rice.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/bagel.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/baguette.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/baking_soda.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/balsamic.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/bamboo_steamer.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/banana.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/banana_bunch.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/basil.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/bay_leaf.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/bean.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/beef_jerky.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/beer.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/beet.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/bellpepper.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/berry.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/black_pepper.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/blood_orange.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/blood_sausage.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/blue_cheese.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/blueberry.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/bolognese.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/bread.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/breadcrumbs.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/brie_cheese.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/brioche.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/broccoli.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/brownies.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/brussels_sprouts.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/bun.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/buratta.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/burger.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/butter.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/butter_board.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/cabbage.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/can_of_chili.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/canned.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/canned_tuna.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/caramel_apple.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/carrot.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/cauliflower.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/caviar.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/celery.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/cereal.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/cereal_container.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/charred_broccoli.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/cheese.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/cherries.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/cherry_tomato.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/chia.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/chia_pudding.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/chicken.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/chickpea.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/chili.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/chili_crisp.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/chili_dog.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/chinese_green_tea.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/chips.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/chives.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/chocolate.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/chocolate_pie.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/chocolate_strawberry.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/chopped_vegetables.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/cider.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/cloudberry.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/cocoa.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/coconut.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/coconut_water.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/coffee.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/coffee_grains.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/coke.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/cookie.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/corn.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/corndog.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/couscous.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/crab_apple.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/cracker.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/cranberry.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/cranberry_sauce.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/crepe.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/crispy_cauliflower_bites.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/crumpet.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/cucumber.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/currant.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/date.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/dijon.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/dim_sum.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/doner.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/dough.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/dough_mixer.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/dozen_egg.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/dragonfruit.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/dried_mango.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/dumplings.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/eclaire.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/edamame.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/egg.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/egg_in_a_hole.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/eggnog.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/eggplant.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/eggpoacher.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/eggs.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/empanada.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/empty_food_box.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/energy_drink.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/everything_bagel.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/expired_meat.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/farfalle.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/fig.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/fish.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/flat_peach.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/food_box.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/freeze_dried_strawberry.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/french_fries.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/fried_cheese_curds.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/fried_oyster_poboy.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/fruit_loops.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/fruits.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/garlic.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/garlic_clove.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/garlic_powder.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/ginger.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/gnocchi.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/gouda.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/granola.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/grape.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/grape_leaf.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/grape_tomatoes.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/grapefruit.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/gravy.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/grilled_cheese_sandwich.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/guacamole.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/guava.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/gumdrop.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/halloumi.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/ham.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/hamburger.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/hard_cheese.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/hazelnut.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/heavy_cream.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/herb_butter.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/honey.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/honeycomb.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/honeycrisp_apple.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/horseradish.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/hot_dog.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/hot_honey.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/hot_sauce.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/hurry.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/ice.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/ice_cream.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/instant_ramen.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/instant_rice.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/jalapeno.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/jam.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/jar_of_pickles.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/jelly_beans.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/juice.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/kaffir.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/ketchup.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/key_lime_pie.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/kiwi.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/kohlrabi.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/kwek_kwek.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/lamb_kofta.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/lasagne.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/lemon.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/lemon_juicer.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/lemonade.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/lentils.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/lime.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/lobster.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/lobster_mac_cheese.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/lobster_roll.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/lunch_tray.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/mac_and_cheese.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/mango.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/mangosteen.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/maple.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/maple_bacon_donut.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/maple_syrup.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/mashed_potatoes.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/matcha.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/mayonnaise.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/meatballs.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/milk.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/milk_carton.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/mince_pie.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/mint.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/miso.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/missing_items.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/molasses_cookie.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/mozzarella.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/mulled_wine.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/mushroom.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/mustard.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/nachos.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/noodle_strainer.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/noodles.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/nori.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/nugget.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/nutella.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/oats.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/oil.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/okra.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/olive.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/olive_oil.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/onion_bloom.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/onion_rings.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/orange.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/orange_juice.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/orange_wine.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pancakes.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/papaya.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/paprika.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/parmesan.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/parsnip.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/passionfruit.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pasta.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pasta_maker.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pastel_frito.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/peach.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/peanut.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/peas.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pecan.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pepperjack_cheese.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/peppermint.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/persian_saffron_rice.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pesto.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pickleback.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pickled_herring.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pineapple.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pinenut.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pistaccio_butter.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pistachio.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pizza.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/plum.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pomegranate.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pomegranate_molasses.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pomelo.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/popcorn.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/potato.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pudding.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pumpkin.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pumpkin_pie.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pumpkin_seeds.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/pumpkin_spice_latte.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/purple_yam.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/quinoa.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/rain.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/rainbow_carrot.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/raisins.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/ramps.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/raspberry.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/ratatouille.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/ready_to_eat.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/rhubarb.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/rice.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/roasted_potatoes.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/roe.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/rosemary.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/rye_crispbread.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/salami.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/salt.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/sandwich_bag.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/sauce.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/sausage.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/scallop.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/sesame.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/shawarma.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/shrimp.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/silver.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/skittles.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/sliced_onion.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/smoked_almonds.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/smoked_herring.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/soda.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/soup.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/sourdough bread.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/soy_beans.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/sparkling_coffee.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/spinach.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/sprinkles.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/squid_ink_pasta.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/strawberry.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/strawberry_jam.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/stroopwafel.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/stuffing.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/sugar.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/sugar_bag.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/sumac.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/sunflower_oil.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/sunflower_seed.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/sushi.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/sweet_potato.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/swordfish_steak.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/szechuan.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tabasco.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tacos.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tahini.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tamales.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tamarillo.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tamarind.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tangerine.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tapenade.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tapioca.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tea.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tempura.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tequila.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/thyme.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tick.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tinned_anchovy.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tinned_fish.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/toast.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tofu.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tomato.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tongs.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tortilla.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/truffle_fries.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tumeric.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tumeric_latte.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/tuna_melt.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/turkey.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/uncooked_pasta.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/vanilla.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/vegemite.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/vinegar.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/vitamin_gummy.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/vodka.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/walnut.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/wasabi.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/water.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/water_bottle.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/water_jar.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/watermelon.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/white_asparagus.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/white_wine.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/wild_truffle.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/wildberry.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/wine.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/yogurt.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/yorkshire_pudding.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/zaatar_flatbread.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/zucchini.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/ingredients/zucchini_noodles.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/achievement.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/ad_free.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/add_calendar.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/ai_magic.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/allergens.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/animation_enhanced.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/animation_reduced.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/animation_standard.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/answer.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/archive.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/arrow_left.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/arrow_right.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/autumn.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/award.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/bookmark.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/bronze.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/calendar.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/cart.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/challenge.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/change_password.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/check.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/chefs_kiss.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/clock.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/cloud.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/comment.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/cooking_mode.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/db.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/debug.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/delivery.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/digital_clock.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/discount.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/dislike.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/do_not_enter.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/down.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/drag_handle.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/eco_leaf.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/edit.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/effort.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/error.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/exclamation_point.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/failed.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/favorite.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/feedback.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/fire.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/food_box.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/forgot_password.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/gauge.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/glass_chart.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/glasses.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/golden_heart.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/groceries.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/grocery.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/grocery_receipt.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/hashtag.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/health_journal.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/healthy_food.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/heart.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/home.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/hourglass.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/important.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/info.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/inventory.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/keys.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/kitchen.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/leaderboard.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/leftover_container.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/lightbulb.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/link.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/list.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/location.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/location_pin.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/logbook.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/magic.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/measuring_cup.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/more_options.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/nutrition.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/nutrition_chart.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/offer.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/one.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/palette.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/password.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/plus.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/preparation_mode.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/prize.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/profile.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/receipt.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/recipe_box.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/recipe_card.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/recipes.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/record.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/refresh.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/reverse.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/review.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/save.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/scan.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/schedule.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/scroll.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/search.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/settings.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/share.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/sign_in.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/sign_out.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/sos.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/spice_rack.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/star.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/store_mode.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/subscription.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/team.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/thumbs_up.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/timer.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/todo.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/trash.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/trending_down.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/unknown.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/up.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/upload.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/waiting.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/warning.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/warning_circle.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/win.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/wishlist.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/world.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/x.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/x_circle.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/interface/xp.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/kitchen_tools/butchers_cleaver.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/kitchen_tools/chopsticks.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/kitchen_tools/dining_plate.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/kitchen_tools/egg_separator.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/kitchen_tools/fork.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/kitchen_tools/grater.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/kitchen_tools/kitchen_knife.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/kitchen_tools/kitchen_utensils.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/kitchen_tools/knife.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/kitchen_tools/knives.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/kitchen_tools/measuring_spoon.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/kitchen_tools/meat_tenderizer.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/kitchen_tools/nut_cracker.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/kitchen_tools/potato_masher.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/kitchen_tools/scale.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/kitchen_tools/spatula.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/kitchen_tools/spoon.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/kitchen_tools/whisk.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/american.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/aperativo.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/appetizer.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/baking.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/chinese.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/french.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/greek.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/indian.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/italian.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/japanese.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/korean.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/mexican.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/middle_eastern.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/picnic.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/salad.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/sandwich.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/side_dish.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/snack.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/soup.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/spanish.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_categories/thai.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_types/breakfast.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_types/dessert.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_types/dinner.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_types/drink.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_types/lunch.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_types/main.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_types/sandwich.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_types/side.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_types/sides.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/meal_types/snack.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/nutrition/cal.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/nutrition/carb.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/nutrition/fat.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/nutrition/fiber.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/nutrition/glucose.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/nutrition/protein.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/nutrition/sodium.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: public/icons/nutrition/sugar.webp
+================================================
+[Non-text file]
+
+
+================================================
+File: src/app/globals.css
+================================================
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FFFBF2;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E53E3E;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #c53030;
+}
+
+/* Custom Utilities for Shelfie Design */
+
+.bg-grid-pattern {
+    background-image: radial-gradient(#1A1A1A 0.5px, transparent 0.5px);
+    background-size: 20px 20px;
+}
+
+/* Cinematic Noise Overlay */
+.bg-noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+}
+
+/* Paper Texture for Cards */
+.bg-paper {
+    background-color: #fff;
+    background-image: linear-gradient(#f0f0f0 1px, transparent 1px), linear-gradient(90deg, #f0f0f0 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: center;
+}
+
+/* Receipt Zag-Edge Clip Path */
+.receipt {
+    clip-path: polygon(0 0,
+            100% 0,
+            100% 100%,
+            95% 98%, 90% 100%, 85% 98%, 80% 100%, 75% 98%, 70% 100%, 65% 98%, 60% 100%,
+            55% 98%, 50% 100%, 45% 98%, 40% 100%, 35% 98%, 30% 100%, 25% 98%, 20% 100%,
+            15% 98%, 10% 100%, 5% 98%, 0 100%);
+}
+
+/* Utilities for 3D Transforms */
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.rotate-y-3 {
+    transform: rotateY(3deg);
+}
+
+.rotate-x-3 {
+    transform: rotateX(3deg);
+}
+
+.hover\:rotate-y-6:hover {
+    transform: rotateY(6deg);
+}
+
+.hover\:rotate-x-6:hover {
+    transform: rotateX(6deg);
+}
+
+
+================================================
+File: src/app/layout.tsx
+================================================
+import type { Metadata } from "next";
+import { Manrope, Outfit } from "next/font/google";
+import "./globals.css";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: 'swap',
+  weight: ['200', '300', '400', '500', '600', '700', '800']
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: 'swap',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+});
+
+export const metadata: Metadata = {
+  title: "Shelfie - The Cycle of Smart Cooking",
+  description: "The intelligent kitchen co-pilot that turns chaotic inventory into delicious dinner.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+      </head>
+      <body
+        className={`${manrope.variable} ${outfit.variable} bg-cream text-text-main font-body antialiased overflow-x-hidden selection:bg-tomato/20 selection:text-tomato`}
+      >
+        <div className="bg-noise"></div>
+        {children}
+      </body>
+    </html>
+  );
+}
+
+
+
+================================================
+File: src/app/page.tsx
+================================================
+import { Cta } from '@/components/Cta';
+import { Cycle } from '@/components/Cycle';
+import { Features } from '@/components/Features';
+import { Footer } from '@/components/Footer';
+import { Hero } from '@/components/Hero';
+import { Impact } from '@/components/Impact';
+import { ScrollingBanner } from '@/components/ScrollingBanner';
+
+export default function Home() {
+  return (
+    <div className="relative flex min-h-screen w-full max-w-full overflow-x-hidden flex-col">
+      {/* Header */}
+      <div className="w-full border-b border-stone-200/60 bg-cream/90 backdrop-blur-md sticky top-0 z-50 transition-all duration-300">
+        <div className="mx-auto max-w-[1200px] w-full">
+          <div className="flex flex-1 flex-col px-4 md:px-6 lg:px-8">
+            <header className="flex items-center justify-between whitespace-nowrap py-4">
+              <div className="flex items-center gap-2 cursor-pointer select-none group">
+                <div className="size-12 relative flex items-center justify-center">
+                  <img 
+                    src="/logo.png" 
+                    alt="Shelfie Logo" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <h2 className="text-3xl font-display font-bold tracking-tight text-charcoal">Shelfie</h2>
+              </div>
+              <div className="hidden md:flex flex-1 justify-center gap-10">
+                <a className="text-text-main hover:text-tomato text-sm font-semibold transition-colors" href="#cycle">The Cycle</a>
+                <a className="text-text-main hover:text-tomato text-sm font-semibold transition-colors" href="#features">Features</a>
+                <a className="text-text-main hover:text-tomato text-sm font-semibold transition-colors" href="#impact">Impact</a>
+              </div>
+              <div className="flex items-center gap-4">
+                <button className="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-charcoal hover:bg-tomato transition-colors text-white text-sm font-bold shadow-lg">
+                  <span className="truncate">Download</span>
+                </button>
+              </div>
+            </header>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <Hero />
+        <ScrollingBanner />
+        <Features />
+        <Cycle />
+        <Impact />
+        <Cta />
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
+
+
+
+================================================
+File: src/components/AppStoreBadge.tsx
+================================================
+export function AppStoreBadge() {
+  return (
+    <img 
+      src="/badges/Apple_preorder.svg" 
+      // src="/badges/Apple_download.svg" 
+      alt="Download in App Store" 
+      width="135"
+      height="70.87"
+    />
+  );
+}
+
+
+
+================================================
+File: src/components/Cta.tsx
+================================================
+import { AppStoreBadge } from '@/components/AppStoreBadge';
+import { GooglePlayBadge } from '@/components/GooglePlayBadge';
+
+export function Cta() {
+  return (
+    <div className="py-24 md:py-32 relative overflow-hidden bg-tomato">
+        <div className="absolute inset-0 bg-[url('/cubes.webp')] opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-tomato to-red-600"></div>
+        <div className="mx-auto flex flex-col items-center text-center px-4 relative z-10">
+            <div className="bg-white/10 backdrop-blur-sm p-2 rounded-full mb-8 inline-block">
+                <span className="material-symbols-outlined text-white text-4xl block">nutrition</span>
+            </div>
+            <h2 className="text-white text-4xl md:text-6xl font-display font-black mb-6 tracking-tight leading-tight">
+                Ready to close the loop?
+            </h2>
+            <p className="text-white/90 text-lg md:text-xl max-w-2xl mb-12 font-medium">
+                Join thousands of smart kitchens today. Download Shelfie and put your fridge to work.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full" data-testid="cta-badges">
+                <a href="#" className="transition-transform hover:scale-105">
+                    <AppStoreBadge />
+                </a>
+                <a href="#" className="transition-transform hover:scale-105">
+                    <GooglePlayBadge />
+                </a>
+            </div>
+            <p className="mt-8 text-white/60 text-sm">Available on iOS and Android. Free 14-day trial for premium features.</p>
+        </div>
+    </div>
+  );
+}
+
+
+
+================================================
+File: src/components/Cycle.tsx
+================================================
+"use client";
+import { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
+
+const cycleSteps = [
+  {
+    title: "The Capture",
+    description: "Snap a receipt, a shelf, or a pile of veggies. Shelfie's computer vision breaks it down into structured data instantly.",
+    icon: "document_scanner",
+    color: "bg-charcoal text-white",
+    image: "/feature-1.webp" // Ensure this exists or use a fallback
+  },
+  {
+    title: "The Brain",
+    description: "We calculate expiration dates based on produce type. We know that chopped onions last 3 days, but whole onions last 3 weeks.",
+    icon: "psychology",
+    color: "bg-purple-100 text-purple-600",
+    image: "/cubes.webp"
+  },
+  {
+    title: "The Match",
+    description: "Dinner isn't about what you want—it's about what you have. We match your inventory to 10,000+ curated recipes.",
+    icon: "restaurant",
+    color: "bg-orange-100 text-orange-600",
+    image: "/feature-2.webp"
+  },
+  {
+    title: "The Loop",
+    description: "Cook it, and it's removed from inventory. Loved it? It's added to your favorites. The AI learns your palate over time.",
+    icon: "all_inclusive",
+    color: "bg-stem/10 text-stem",
+    image: "/banner-3.webp"
+  },
+];
+
+export function Cycle() {
+  const [activeStep, setActiveStep] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      
+      stepRefs.current.forEach((ref, index) => {
+        if (!ref) return;
+        const { offsetTop, offsetHeight } = ref;
+        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          setActiveStep(index);
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <section className="relative bg-cream-dark" id="cycle">
+      <div className="mx-auto max-w-[1200px] px-4 md:px-8">
+        
+        <div className="flex flex-col md:flex-row gap-8 lg:gap-20">
+          
+          {/* Left Side: Sticky Visual */}
+          <div className="hidden md:flex w-1/2 h-screen sticky top-0 items-center justify-center py-10">
+            <div className="relative w-[320px] aspect-[9/19] bg-charcoal rounded-[3rem] shadow-2xl border-8 border-charcoal overflow-hidden ring-1 ring-white/20">
+              {/* Dynamic Image Layer */}
+              {cycleSteps.map((step, index) => (
+                <div 
+                  key={index}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                    activeStep === index ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+                  }`}
+                >
+                  <div className="absolute inset-0 bg-stone-100">
+                    <Image 
+                        src={step.image} 
+                        alt={step.title}
+                        fill
+                        className="object-cover"
+                    />
+                     {/* Overlay for text contrast inside phone */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-8 left-6 right-6 text-white">
+                        <div className={`inline-block p-2 rounded-lg mb-2 ${step.color}`}>
+                            <span className="material-symbols-outlined text-xl">{step.icon}</span>
+                        </div>
+                        <p className="font-bold text-lg leading-tight">{step.title}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              
+              {/* Phone Notch */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-charcoal rounded-b-xl z-20"></div>
+            </div>
+          </div>
+
+          {/* Right Side: Scrolling Content */}
+          <div className="w-full md:w-1/2 py-20 md:py-[20vh] flex flex-col gap-[40vh]">
+             <div className="mb-20">
+                <span className="text-tomato font-bold tracking-widest uppercase text-xs mb-3 block">The Cycle</span>
+                <h2 className="text-4xl md:text-5xl font-display font-black text-charcoal">
+                    Close the loop on<br/>food waste.
+                </h2>
+             </div>
+
+            {cycleSteps.map((step, index) => (
+              <div 
+                key={index}
+                ref={(el) => { stepRefs.current[index] = el; }}
+                className={`transition-all duration-500 p-6 rounded-3xl border border-transparent ${
+                    activeStep === index 
+                    ? 'bg-white shadow-soft border-stone-100 scale-100 opacity-100' 
+                    : 'opacity-40 scale-95 grayscale'
+                }`}
+              >
+                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 shadow-sm ${step.color}`}>
+                  <span className="material-symbols-outlined text-2xl">{step.icon}</span>
+                </div>
+                <h3 className="text-3xl font-display font-bold text-charcoal mb-4">
+                  {step.title}
+                </h3>
+                <p className="text-text-muted text-lg leading-relaxed font-medium">
+                  {step.description}
+                </p>
+                
+                {/* Mobile-only visual since sticky is hidden */}
+                <div className="block md:hidden mt-6 h-48 relative rounded-xl overflow-hidden">
+                    <Image src={step.image} fill className="object-cover" alt={step.title} />
+                </div>
+              </div>
+            ))}
+            
+            <div className="h-[20vh]"></div> {/* Spacer for bottom scroll */}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+================================================
+File: src/components/Features.tsx
+================================================
+import Image from 'next/image';
+
+export function Features() {
+  return (
+    <div className="bg-cream py-24 md:py-32 relative" id="features">
+      {/* Background decoration: Subtle Grain */}
+      <div className="absolute inset-0 opacity-40 bg-[url('/noise.svg')] pointer-events-none mix-blend-multiply"></div>
+      
+      <div className="mx-auto flex flex-col items-center relative z-10">
+        <div className="max-w-[1200px] w-full px-4 md:px-8">
+          
+          <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="max-w-2xl">
+              <span className="text-tomato font-bold tracking-widest uppercase text-xs mb-3 block">The Shelfie OS</span>
+              <h2 className="text-charcoal text-4xl md:text-6xl font-display font-black tracking-tight leading-[0.95]">
+                Mise-en-place <br />
+                <span className="text-text-muted/60">for your digital life.</span>
+              </h2>
+            </div>
+            <p className="text-text-main text-lg max-w-sm leading-relaxed font-medium">
+              Stop treating your kitchen like a warehouse. Start treating it like a studio.
+            </p>
+          </div>
+
+          {/* Bento Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-6 grid-rows-auto md:grid-rows-[300px_300px] gap-4 md:gap-6">
+            
+            {/* FEATURE 1: Vision (Large Square) */}
+            <div className="col-span-1 md:col-span-3 md:row-span-2 bg-white rounded-[2rem] p-8 md:p-10 relative overflow-hidden group shadow-soft hover:shadow-xl transition-all duration-500 border border-stone-100/50">
+              <div className="relative z-20 h-full flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 bg-tomato/10 rounded-2xl flex items-center justify-center text-tomato mb-6">
+                    <span className="material-symbols-outlined text-2xl">photo_camera</span>
+                  </div>
+                  <h3 className="text-3xl font-bold font-display text-charcoal mb-4">Snap & Sort</h3>
+                  <p className="text-text-muted text-base max-w-xs leading-relaxed">
+                    Shelfie doesn't just "see" food. It understands ripeness, quantity, and potential. It's not a scanner; it's a sous-chef.
+                  </p>
+                </div>
+                
+                {/* Interactive Element: Floating tags */}
+                <div className="mt-8 flex flex-wrap gap-2">
+                  {['Spinach (Wilted)', 'Pesto (Open)', 'Milk (Expiring)'].map((tag, i) => (
+                    <span key={i} className="px-3 py-1.5 bg-cream-dark text-charcoal text-xs font-bold rounded-full border border-stone-200 shadow-sm transform transition-transform hover:scale-105 cursor-default">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Background Visual */}
+              <div className="absolute right-0 bottom-0 w-2/3 h-2/3 md:w-[60%] md:h-[60%] translate-x-1/6 translate-y-1/6 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                 <div className="relative w-full h-full">
+                    <Image 
+                        src="/feature-1.webp" 
+                        alt="AI Vision" 
+                        fill 
+                        className="object-cover rounded-tl-3xl shadow-2xl border-t-4 border-l-4 border-white"
+                    />
+                 </div>
+              </div>
+            </div>
+
+            {/* FEATURE 2: Recipes (Wide Rect) */}
+            <div className="col-span-1 md:col-span-3 bg-stone-900 rounded-[2rem] p-8 md:p-10 relative overflow-hidden group shadow-soft text-white">
+              <div className="relative z-20 flex flex-col h-full justify-between">
+                 <div className="flex justify-between items-start">
+                    <div>
+                        <h3 className="text-2xl font-bold font-display mb-2">Reverse Recipe</h3>
+                        <p className="text-stone-400 text-sm max-w-[200px]">Don't shop for recipes. <br/>Cook what you own.</p>
+                    </div>
+                    <span className="material-symbols-outlined text-3xl text-stem">restaurant_menu</span>
+                 </div>
+              </div>
+              
+              {/* Abstract decorative circles simulating a stove or plates */}
+              <div className="absolute -right-12 -top-12 w-48 h-48 border-[20px] border-white/5 rounded-full group-hover:scale-110 transition-transform duration-700"></div>
+              <div className="absolute -right-4 top-24 w-24 h-24 bg-tomato rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
+              
+               <div className="absolute bottom-6 right-8 left-8">
+                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 flex items-center gap-4 border border-white/10">
+                      <div className="w-10 h-10 bg-orange-100 rounded-full shrink-0 flex items-center justify-center">
+                        <span className="text-xl">🥑</span>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                          <div className="h-1.5 w-1/3 bg-white/20 rounded-full mb-1.5"></div>
+                          <div className="h-1.5 w-2/3 bg-white/40 rounded-full"></div>
+                      </div>
+                      <span className="text-xs font-bold text-stem">Match!</span>
+                  </div>
+               </div>
+            </div>
+
+            {/* FEATURE 3: Analytics (Tall Vertical) */}
+            <div className="col-span-1 md:col-span-1 md:row-span-1 bg-tomato text-white rounded-[2rem] p-6 relative overflow-hidden group shadow-glow hover:shadow-lg transition-all">
+                <div className="flex flex-col h-full justify-between relative z-10">
+                    <span className="material-symbols-outlined text-3xl">savings</span>
+                    <div>
+                        <div className="text-4xl font-display font-black mb-1">-$3k</div>
+                        <p className="text-white/80 text-xs font-medium leading-tight">Average yearly savings per household.</p>
+                    </div>
+                </div>
+                <div className="absolute top-1/2 -right-8 w-24 h-24 bg-white/20 rotate-45 transform group-hover:rotate-12 transition-transform duration-500"></div>
+            </div>
+
+            {/* FEATURE 4: Sync/Cloud (Square) */}
+            <div className="col-span-1 md:col-span-2 bg-yellow-50 rounded-[2rem] p-8 relative overflow-hidden group border border-yellow-100">
+               <div className="flex flex-row items-center gap-4 h-full">
+                  <div className="flex-1">
+                     <h3 className="text-xl font-bold font-display text-charcoal mb-2">Family Sync</h3>
+                     <p className="text-charcoal/60 text-sm">Partner bought milk? You'll know before you leave work.</p>
+                  </div>
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm text-yellow-500 group-hover:scale-110 transition-transform">
+                     <span className="material-symbols-outlined text-3xl">sync</span>
+                  </div>
+               </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+================================================
+File: src/components/Footer.tsx
+================================================
+export function Footer() {
+  return (
+    <footer className="bg-cream border-t border-stone-200 py-16">
+      <div className="mx-auto flex justify-center px-4 md:px-10">
+        <div className="max-w-[1200px] w-full">
+          <div className="flex flex-col md:flex-row justify-between gap-12">
+              <div className="flex flex-col gap-6">
+                  <div className="flex items-center gap-2 text-charcoal">
+                      <div className="size-6 text-tomato">
+                          <span className="material-symbols-outlined">nutrition</span>
+                      </div>
+                      <h2 className="text-xl font-display font-bold">Shelfie</h2>
+                  </div>
+                  <p className="text-text-muted text-sm max-w-[280px] leading-relaxed">
+                      Your intelligent kitchen co-pilot, turning chaotic cupboards into delicious dinners while helping the planet, one meal at a time.
+                  </p>
+                  <div className="flex gap-4 mt-2">
+                      <a className="size-10 rounded-full bg-stone-200 flex items-center justify-center text-charcoal hover:bg-tomato hover:text-white transition-colors" href="#"><span className="material-symbols-outlined text-sm">mail</span></a>
+                      <a className="size-10 rounded-full bg-stone-200 flex items-center justify-center text-charcoal hover:bg-tomato hover:text-white transition-colors" href="#"><span className="material-symbols-outlined text-sm">public</span></a>
+                      <a className="size-10 rounded-full bg-stone-200 flex items-center justify-center text-charcoal hover:bg-tomato hover:text-white transition-colors" href="#"><span className="material-symbols-outlined text-sm">alternate_email</span></a>
+                  </div>
+              </div>
+              <div className="flex flex-wrap gap-12 md:gap-24">
+                  <div className="flex flex-col gap-4">
+                      <h3 className="text-charcoal font-bold font-display">Product</h3>
+                      <a className="text-text-muted text-sm hover:text-tomato transition-colors" href="#">Download</a>
+                      <a className="text-text-muted text-sm hover:text-tomato transition-colors" href="#">Cycle</a>
+                      <a className="text-text-muted text-sm hover:text-tomato transition-colors" href="#">Recipes</a>
+                      <a className="text-text-muted text-sm hover:text-tomato transition-colors" href="#">Pricing</a>
+                  </div>
+                  <div className="flex flex-col gap-4">
+                      <h3 className="text-charcoal font-bold font-display">Mission</h3>
+                      <a className="text-text-muted text-sm hover:text-tomato transition-colors" href="#">Food Waste</a>
+                      <a className="text-text-muted text-sm hover:text-tomato transition-colors" href="#">About Us</a>
+                      <a className="text-text-muted text-sm hover:text-tomato transition-colors" href="#">Sustainability</a>
+                  </div>
+                  <div className="flex flex-col gap-4">
+                      <h3 className="text-charcoal font-bold font-display">Legal</h3>
+                      <a className="text-text-muted text-sm hover:text-tomato transition-colors" href="#">Privacy</a>
+                      <a className="text-text-muted text-sm hover:text-tomato transition-colors" href="#">Terms</a>
+                  </div>
+              </div>
+          </div>
+          <div className="mt-16 text-center text-text-muted/60 text-xs">
+              Made with love and breadcrumbs.
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+
+
+================================================
+File: src/components/GooglePlayBadge.tsx
+================================================
+export function GooglePlayBadge() {
+  return (
+    <img 
+      src="/badges/GooglePlay_preorder.svg" 
+      // src="/badges/GooglePlay_download.svg" 
+      alt="Get it on Google Play" 
+      width="135"
+      height="70.87"
+    />
+  );
+}
+
+
+
+================================================
+File: src/components/Hero.tsx
+================================================
+import Image from 'next/image';
+import { AppStoreBadge } from '@/components/AppStoreBadge';
+import { GooglePlayBadge } from '@/components/GooglePlayBadge';
+
+export function Hero() {
+  return (
+    <div className="relative overflow-hidden bg-cream pt-10 pb-20 md:pt-20 md:pb-32">
+      {/* Organic Blobs */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-tomato/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-stem/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+
+      <div className="mx-auto max-w-[1300px] w-full px-4 md:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          
+          {/* Copy Column */}
+          <div className="flex flex-col gap-8 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 self-center lg:self-start bg-white border border-stone-200 rounded-full px-4 py-1.5 shadow-sm">
+              <span className="size-2 bg-stem rounded-full animate-pulse"></span>
+              <span className="text-xs font-bold text-charcoal uppercase tracking-wider font-display">v2.0 Now Available</span>
+            </div>
+            
+            <h1 className="text-charcoal text-5xl md:text-7xl lg:text-[5.5rem] font-display font-black leading-[0.9] tracking-tighter">
+              Turn your <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-tomato to-orange-500">
+                chaos
+              </span> into <br />
+              <span className="relative inline-block">
+                cuisine.
+                <img src="/icons/kitchen_tools/kitchen_knife.webp" className="absolute -right-12 top-2 w-10 h-10 opacity-80 rotate-45 hidden md:block" alt="" />
+              </span>
+            </h1>
+            
+            <p className="text-text-muted text-xl font-medium leading-relaxed max-w-xl mx-auto lg:mx-0">
+              The intelligent kitchen co-pilot that turns a photo of your fridge into a dinner plan, so you stop wasting food and money.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+               <AppStoreBadge />
+               <GooglePlayBadge />
+            </div>
+
+            <div className="flex items-center justify-center lg:justify-start gap-4 pt-2 text-sm text-text-muted font-medium">
+               <span className="flex items-center gap-1"><span className="material-symbols-outlined text-stem">check</span> No Account Needed</span>
+               <span className="flex items-center gap-1"><span className="material-symbols-outlined text-stem">check</span> 14-Day Free Trial</span>
+            </div>
+          </div>
+
+          {/* Visual Column: The "Magic Receipt" */}
+          <div className="relative group perspective-1000">
+             {/* The Card */}
+             <div className="relative z-10 bg-white rounded-3xl shadow-2xl p-3 md:p-4 transform transition-transform duration-700 hover:rotate-y-6 hover:rotate-x-6 rotate-y-3 rotate-x-3 border-4 border-white/50">
+                <div className="relative aspect-[4/5] bg-stone-100 rounded-2xl overflow-hidden">
+                    <Image src="/hero-image.webp" fill className="object-cover" alt="App Screenshot" />
+                    
+                    {/* Floating UI Elements that break the frame */}
+                    <div className="absolute top-8 -left-8 bg-white p-3 rounded-xl shadow-xl border border-stone-100 flex items-center gap-3 animate-bounce" style={{ animationDuration: '3s' }}>
+                        <div className="bg-green-100 p-2 rounded-lg text-green-700">
+                            <span className="material-symbols-outlined text-xl">check_circle</span>
+                        </div>
+                        <div>
+                            <div className="text-xs text-stone-500 font-bold uppercase">Identified</div>
+                            <div className="text-charcoal font-bold">Avocado</div>
+                        </div>
+                    </div>
+
+                    <div className="absolute bottom-12 -right-4 bg-charcoal text-white p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce" style={{ animationDuration: '4s' }}>
+                         <div>
+                            <div className="text-[10px] text-stone-400 font-bold uppercase">Recipe Match</div>
+                            <div className="font-bold">Avocado Toast</div>
+                        </div>
+                        <div className="bg-white/20 p-2 rounded-lg">
+                            <span className="material-symbols-outlined text-xl">arrow_forward</span>
+                        </div>
+                    </div>
+                </div>
+             </div>
+             
+             {/* Decorative Background Elements */}
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-tomato/20 to-orange-100/50 rounded-full blur-3xl -z-10"></div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+================================================
+File: src/components/Impact.tsx
+================================================
+export function Impact() {
+  return (
+    <div className="bg-charcoal py-20 md:py-28 relative overflow-hidden" id="impact">
+      <div className="absolute inset-0 opacity-10" style={{backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)", backgroundSize: "30px 30px"}}></div>
+      <div className="mx-auto flex flex-col items-center relative z-10">
+        <div className="flex flex-col max-w-[1200px] w-full px-4 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="inline-block px-3 py-1 bg-tomato/20 rounded-md text-tomato text-xs font-bold uppercase tracking-wider mb-6">The Reality</div>
+              <h2 className="text-white text-4xl md:text-5xl font-display font-bold leading-tight mb-8">
+                Your trash can <br/><span className="text-stone-400">eats better than you do.</span>
+              </h2>
+              <p className="text-stone-300 text-lg leading-relaxed mb-10 font-light">
+                It happens to everyone: the forgotten salad, the leftovers pushed to the back. These small habits contribute to a massive global problem and a bigger hole in your wallet.
+              </p>
+              <div className="flex flex-col gap-6">
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
+                  <span className="material-symbols-outlined text-tomato text-3xl mt-1">delete_forever</span>
+                  <div>
+                    <h3 className="text-white text-6xl md:text-7xl font-bold font-display">32%</h3>
+                    <p className="text-stone-400 text-sm mt-1">of food is wasted by the average US household.</p>
+                  </div>
+                </div>
+                <div className="relative receipt bg-white text-charcoal p-6 pb-12 shadow-2xl transform rotate-1 transition-transform hover:rotate-0">
+                  <div className="flex items-start gap-4">
+                    <span className="material-symbols-outlined text-stem text-4xl mt-1">savings</span>
+                    <div>
+                      <h3 className="text-charcoal text-7xl md:text-8xl font-bold font-display tracking-tighter">-$3k</h3>
+                      <div className="h-px w-full bg-stone-300 my-2 dashed-line opacity-50"></div>
+                      <p className="text-stone-600 font-mono text-xs uppercase tracking-widest mt-1">Annual Loss / Family of 4</p>
+                      <div className="mt-4 flex gap-2 items-center">
+                         <span className="text-[10px] font-mono text-stone-400">ITEM: GROCERIES</span>
+                         <span className="flex-1 border-b border-stone-300 border-dotted"></span>
+                         <span className="text-[10px] font-mono text-stone-400">WASTED</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute -inset-4 bg-tomato rounded-full blur-[100px] opacity-20"></div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-4 translate-y-8">
+                  <div className="bg-stone-800 rounded-2xl p-6 border border-stone-700 h-64 flex flex-col justify-end overflow-hidden relative group">
+                    <div className="absolute inset-0 opacity-20" style={{backgroundImage: "repeating-linear-gradient(45deg, #444 0, #444 1px, transparent 0, transparent 50%)", backgroundSize: "10px 10px"}}></div>
+                    <div className="relative z-10">
+                      <div className="w-12 h-12 rounded-full border-4 border-tomato/50 mb-4 flex items-center justify-center">
+                        <span className="material-symbols-outlined text-tomato text-2xl">warning</span>
+                      </div>
+                      <div className="text-3xl font-bold text-white mb-1">119 lbs</div>
+                      <div className="text-xs text-stone-300 uppercase tracking-wide">Food waste / person / yr</div>
+                    </div>
+                  </div>
+                  <div className="bg-cream rounded-2xl p-6 h-40 flex flex-col justify-center items-center text-center">
+                    <span className="material-symbols-outlined text-4xl text-charcoal mb-2">eco</span>
+                    <div className="font-display font-bold text-charcoal">Save the planet</div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="bg-tomato rounded-2xl p-6 h-40 flex flex-col justify-center items-center text-center text-white">
+                    <span className="material-symbols-outlined text-4xl mb-2">savings</span>
+                    <div className="font-display font-bold">Save your wallet</div>
+                  </div>
+                  <div className="bg-stone-800 rounded-2xl p-6 border border-stone-700 h-64 flex flex-col justify-end overflow-hidden relative group">
+                     <div className="absolute inset-0 flex items-center justify-center opacity-10">
+                        <span className="material-symbols-outlined text-9xl text-white">check_circle</span>
+                     </div>
+                    <div className="relative z-10">
+                      <div className="w-full bg-stone-700 h-2 rounded-full overflow-hidden mb-4">
+                        <div className="bg-stem h-full w-full"></div>
+                      </div>
+                      <div className="text-3xl font-bold text-white mb-1">Zero</div>
+                      <div className="text-xs text-stone-300 uppercase tracking-wide">Waste Goal</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+
+================================================
+File: src/components/ScrollingBanner.tsx
+================================================
+"use client";
+import Image from 'next/image';
+import { useState, useRef, useEffect } from 'react';
+
+export function ScrollingBanner() {
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [velocity, setVelocity] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(true);
+  const scrollContainer = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<number>();
+  const lastTimeRef = useRef<number>(0);
+  const lastXRef = useRef<number>(0);
+  const rafRef = useRef<number>();
+
+  // Auto-scroll animation using CSS animation
+  useEffect(() => {
+    if (isDragging && scrollContainer.current) {
+      // Pause CSS animation when dragging
+      scrollContainer.current.style.animationPlayState = 'paused';
+    } else if (scrollContainer.current) {
+      // Resume CSS animation when not dragging
+      scrollContainer.current.style.animationPlayState = 'running';
+    }
+  }, [isDragging]);
+
+  // iOS-style momentum scrolling
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setStartX(e.pageX - (scrollContainer.current?.offsetLeft || 0));
+    setScrollLeft(scrollContainer.current?.scrollLeft || 0);
+    setVelocity(0);
+    lastXRef.current = e.pageX;
+    lastTimeRef.current = Date.now();
+    
+    if (scrollContainer.current) {
+      scrollContainer.current.style.animationPlayState = 'paused';
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+    
+    // Apply momentum
+    if (Math.abs(velocity) > 0.5 && scrollContainer.current) {
+      const momentumScroll = () => {
+        if (!scrollContainer.current) return;
+        
+        const currentVelocity = velocity * 0.95; // Friction
+        scrollContainer.current.scrollLeft += currentVelocity;
+        
+        if (Math.abs(currentVelocity) > 0.1) {
+          setVelocity(currentVelocity);
+          rafRef.current = requestAnimationFrame(momentumScroll);
+        } else {
+          // Resume auto-scroll after momentum stops
+          setTimeout(() => {
+            if (scrollContainer.current) {
+              scrollContainer.current.style.animationPlayState = 'running';
+            }
+          }, 1000);
+        }
+      };
+      momentumScroll();
+    } else {
+      // Resume auto-scroll immediately if no momentum
+      setTimeout(() => {
+        if (scrollContainer.current) {
+          scrollContainer.current.style.animationPlayState = 'running';
+        }
+      }, 1000);
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    
+    const x = e.pageX;
+    const currentTime = Date.now();
+    const deltaTime = currentTime - lastTimeRef.current;
+    const deltaX = x - lastXRef.current;
+    
+    // Calculate velocity for momentum
+    if (deltaTime > 0) {
+      setVelocity(deltaX / deltaTime * 16); // Normalize to 60fps
+    }
+    
+    const walk = (x - startX) * 1.2; // Scroll speed multiplier
+    if (scrollContainer.current) {
+      scrollContainer.current.scrollLeft = scrollLeft - walk;
+    }
+    
+    lastXRef.current = x;
+    lastTimeRef.current = currentTime;
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touch = e.touches[0];
+    setIsDragging(true);
+    setStartX(touch.pageX - (scrollContainer.current?.offsetLeft || 0));
+    setScrollLeft(scrollContainer.current?.scrollLeft || 0);
+    setVelocity(0);
+    lastXRef.current = touch.pageX;
+    lastTimeRef.current = Date.now();
+    
+    if (scrollContainer.current) {
+      scrollContainer.current.style.animationPlayState = 'paused';
+    }
+  };
+
+  const handleTouchEnd = () => {
+    handleMouseUp(); // Same logic as mouse
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+    const touch = e.touches[0];
+    
+    const currentTime = Date.now();
+    const deltaTime = currentTime - lastTimeRef.current;
+    const deltaX = touch.pageX - lastXRef.current;
+    
+    // Calculate velocity for momentum
+    if (deltaTime > 0) {
+      setVelocity(deltaX / deltaTime * 16); // Normalize to 60fps
+    }
+    
+    const walk = (touch.pageX - startX) * 1.2; // Scroll speed multiplier
+    if (scrollContainer.current) {
+      scrollContainer.current.scrollLeft = scrollLeft - walk;
+    }
+    
+    lastXRef.current = touch.pageX;
+    lastTimeRef.current = currentTime;
+  };
+
+  return (
+    <div className="w-full bg-charcoal overflow-hidden whitespace-nowrap py-12 relative">
+      <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+      <div 
+        ref={scrollContainer}
+        className="flex animate-scroll gap-6 px-6 will-change-transform cursor-grab active:cursor-grabbing select-none"
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        onMouseMove={handleMouseMove}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onTouchMove={handleTouchMove}
+        style={{ 
+          scrollBehavior: 'smooth',
+          scrollSnapType: 'x mandatory',
+          WebkitOverflowScrolling: 'touch'
+        }}
+      >
+        <div className="w-72 h-48 rounded-2xl overflow-hidden relative shrink-0 border border-white/10 group -rotate-2">
+          <Image src="/banner-1.webp" alt="Basil Pesto" fill className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 scale-110" />
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+            <span className="text-white font-display font-bold">Basil Pesto</span>
+          </div>
+        </div>
+        <div className="w-72 h-48 rounded-2xl overflow-hidden relative shrink-0 border border-white/10 group bg-stone-800 rotate-2">
+          <Image src="/hero-image.webp" alt="Fridge Scan" fill className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 scale-110" />
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+            <span className="text-white font-display font-bold">Fridge Scan</span>
+          </div>
+        </div>
+        <div className="w-72 h-48 rounded-2xl p-8 shrink-0 border border-white/10 bg-stone-800 flex flex-col justify-center items-center text-center text-white rotate-2">
+            <p className="text-lg font-body mb-4">&quot;Shelfie has been a game-changer for my family. We waste less and eat better.&quot;</p>
+            <span className="text-sm font-bold font-display">- Sarah J.</span>
+        </div>
+        <div className="w-72 h-48 rounded-2xl overflow-hidden relative shrink-0 border border-white/10 group bg-stone-800 -rotate-2">
+          <Image src="/feature-2.webp" alt="Recipe Match" fill className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 scale-110" />
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+            <span className="text-white font-display font-bold">Recipe Match</span>
+          </div>
+        </div>
+        <div className="w-72 h-48 rounded-2xl overflow-hidden relative shrink-0 border border-white/10 group bg-stone-800 rotate-2">
+          <Image src="/banner-4.webp" alt="Easy Scan" fill className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 scale-110" />
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+            <span className="text-white font-display font-bold">Easy Scan</span>
+          </div>
+        </div>
+        <div className="w-72 h-48 rounded-2xl p-8 shrink-0 border border-white/10 bg-stone-800 flex flex-col justify-center items-center text-center text-white -rotate-2">
+            <p className="text-lg font-body mb-4">&quot;I love the recipe suggestions! It&apos;s like having a personal chef.&quot;</p>
+            <span className="text-sm font-bold font-display">- Michael B.</span>
+        </div>
+        <div className="w-72 h-48 rounded-2xl overflow-hidden relative shrink-0 border border-white/10 group bg-stone-800 flex items-center justify-center -rotate-2">
+          <div className="text-center">
+            <img 
+              src="/logo.png" 
+              alt="Shelfie Logo" 
+              className="w-12 h-12 mb-2 object-contain"
+            />
+            <div className="text-white font-display font-bold text-xl">2500+ Recipes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+
+================================================
+File: .windsurf/settings.json
+================================================
+{
+  "css.validate": true,
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore"
+}
+

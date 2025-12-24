@@ -5,57 +5,91 @@
 .material-symbols-outlined {
     font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
+
 ::-webkit-scrollbar {
     width: 8px;
 }
+
 ::-webkit-scrollbar-track {
     background: #FFFBF2;
 }
+
 ::-webkit-scrollbar-thumb {
     background: #E53E3E;
     border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: #c53030;
 }
-.dashed-line {
-    background-image: linear-gradient(to bottom, #E53E3E 50%, transparent 50%);
-    background-size: 2px 20px;
-    background-repeat: repeat-y;
-}
-.cycle-loop-path {
-    stroke-dasharray: 10;
-    animation: dash 30s linear infinite;
-}
-@keyframes dash {
-    to {
-        stroke-dashoffset: -1000;
-    }
-}
+
+/* Custom Utilities for Shelfie Design */
+
 .bg-grid-pattern {
     background-image: radial-gradient(#1A1A1A 0.5px, transparent 0.5px);
     background-size: 20px 20px;
 }
 
+/* Cinematic Noise Overlay */
 .bg-noise {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 50;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
 }
 
+/* Paper Texture for Cards */
+.bg-paper {
+    background-color: #fff;
+    background-image: linear-gradient(#f0f0f0 1px, transparent 1px), linear-gradient(90deg, #f0f0f0 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: center;
+}
+
+/* Receipt Zag-Edge Clip Path */
 .receipt {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 95% 98%, 90% 100%, 85% 98%, 80% 100%, 75% 98%, 70% 100%, 65% 98%, 60% 100%, 55% 98%, 50% 100%, 45% 98%, 40% 100%, 35% 98%, 30% 100%, 25% 98%, 20% 100%, 15% 98%, 10% 100%, 5% 98%, 0 100%);
+    clip-path: polygon(0 0,
+            100% 0,
+            100% 100%,
+            95% 98%, 90% 100%, 85% 98%, 80% 100%, 75% 98%, 70% 100%, 65% 98%, 60% 100%,
+            55% 98%, 50% 100%, 45% 98%, 40% 100%, 35% 98%, 30% 100%, 25% 98%, 20% 100%,
+            15% 98%, 10% 100%, 5% 98%, 0 100%);
 }
 
-.sticky-container {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  height: 100vh;
+/* Utilities for 3D Transforms */
+.perspective-1000 {
+    perspective: 1000px;
 }
+
+.rotate-y-3 {
+    transform: rotateY(3deg);
+}
+
+.rotate-x-3 {
+    transform: rotateX(3deg);
+}
+
+.hover\:rotate-y-6:hover {
+    transform: rotateY(6deg);
+}
+
+.hover\:rotate-x-6:hover {
+    transform: rotateX(6deg);
+}
+
+.icon-mask {
+    -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+        display: inline-block;
+    }

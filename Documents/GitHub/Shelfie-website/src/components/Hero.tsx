@@ -4,74 +4,99 @@ import { GooglePlayBadge } from '@/components/GooglePlayBadge';
 
 export function Hero() {
   return (
-    <div className="mx-auto flex flex-col items-center relative receipt bg-white drop-shadow-xl" data-testid="hero-receipt">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-tomato/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 -z-10"></div>
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-stem/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 -z-10"></div>
-      <div className="flex flex-col max-w-[1200px] w-full px-4 md:px-10 py-12 md:py-24">
-        <div className="flex flex-col-reverse gap-12 md:gap-16 lg:flex-row items-center">
-          <div className="flex flex-col gap-8 flex-1 text-center lg:text-left z-10">
-            <div className="flex flex-col gap-6">
-              <div className="inline-flex items-center gap-2 self-center lg:self-start bg-white border border-stone-200 rounded-full px-4 py-1.5 shadow-sm hover:shadow-md transition-shadow cursor-default">
-                <span className="material-symbols-outlined text-tomato text-sm">local_fire_department</span>
-                <span className="text-xs font-bold text-charcoal uppercase tracking-wider font-display">Your Kitchen’s Second Brain</span>
-              </div>
-              <h1 className="text-charcoal text-5xl md:text-7xl font-display font-extrabold leading-[1.05] tracking-tight">
-                Stop staring at your fridge. <br />
-                <span className="text-tomato relative inline-block">
-                  Just Shelfie it.
-                  <svg className="absolute w-full h-3 -bottom-1 left-0 text-stem opacity-40" preserveAspectRatio="none" viewBox="0 0 100 10">
-                    <path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" strokeWidth="3"></path>
-                  </svg>
+    <div className="relative overflow-hidden bg-cream pt-10 pb-20 md:pt-20 md:pb-32">
+      {/* Warm, organic background elements */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-tomato/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-stem/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+
+      <div className="mx-auto max-w-[1300px] w-full px-4 md:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+          {/* Headline & Copy */}
+          <div className="flex flex-col gap-8 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 self-center lg:self-start bg-white border border-stone-200 rounded-full px-4 py-1.5 shadow-sm">
+              <span className="size-2 bg-fresh rounded-full animate-pulse"></span>
+              <span className="text-xs font-bold text-charcoal uppercase tracking-wider font-display">Your kitchen's new best friend</span>
+            </div>
+
+            <h1 className="text-charcoal text-5xl md:text-7xl lg:text-[5.5rem] font-display font-black leading-[0.9] tracking-tighter">
+              Stop throwing <br />
+              money in the <br />
+              <span className="relative inline-block text-tomato">
+                garbage.
+                {/* Playful food icon */}
+                <div className="absolute -right-16 top-0 w-14 h-14 hidden md:block">
+                    <Image
+                        src="/icons/ingredients/tomato.webp"
+                        alt="Tomato"
+                        width={56}
+                        height={56}
+                        className="object-contain animate-float"
+                    />
+                </div>
+              </span>
+            </h1>
+
+            <p className="text-text-muted text-xl font-medium leading-relaxed max-w-xl mx-auto lg:mx-0">
+              Your kitchen already has everything for tonight's dinner. We help you see it, use it before it expires, and actually enjoy cooking again.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+               <AppStoreBadge />
+               <GooglePlayBadge />
+            </div>
+
+            <div className="flex items-center justify-center lg:justify-start gap-6 pt-2 text-sm text-text-muted font-medium">
+               <span className="flex items-center gap-2">
+                    <svg className="w-5 h-5 text-fresh" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                    Free to start
                 </span>
-              </h1>
-              <h2 className="text-text-muted text-lg md:text-xl font-medium leading-relaxed max-w-xl mx-auto lg:mx-0 font-body">
-                The intelligent kitchen co-pilot that transforms chaotic cupboards into delicious dinners. Join the cycle of smart cooking.
-              </h2>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2 items-center" data-testid="hero-badges">
-              <a href="#" className="transition-transform hover:-translate-y-1">
-                <AppStoreBadge />
-              </a>
-              <a href="#" className="transition-transform hover:-translate-y-1">
-                <GooglePlayBadge />
-              </a>
-            </div>
-            <div className="flex items-center justify-center lg:justify-start gap-4 pt-4 text-sm text-text-muted">
-              <div className="flex -space-x-3">
-                <div className="size-10 rounded-full border-2 border-cream bg-stone-200" style={{ backgroundImage: "url('/avatar-1.webp')", backgroundSize: 'cover' }}></div>
-                <div className="size-10 rounded-full border-2 border-cream bg-stone-200" style={{ backgroundImage: "url('/avatar-2.webp')", backgroundSize: 'cover' }}></div>
-                <div className="size-10 rounded-full border-2 border-cream bg-stone-200" style={{ backgroundImage: "url('/avatar-3.webp')", backgroundSize: 'cover' }}></div>
-                <div className="size-10 rounded-full border-2 border-cream bg-charcoal text-white flex items-center justify-center text-xs font-bold font-display">+50k</div>
-              </div>
-              <p className="font-medium">Home cooks saving money</p>
+               <span className="flex items-center gap-2">
+                    <svg className="w-5 h-5 text-fresh" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                    Works offline
+                </span>
+               <span className="flex items-center gap-2">
+                    <svg className="w-5 h-5 text-fresh" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                    No subscriptions required
+                </span>
             </div>
           </div>
-          <div className="w-full flex-1 relative group" style={{ perspective: '1000px' }}>
-            <div className="absolute -inset-4 bg-gradient-to-tr from-tomato/20 to-stem/20 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition duration-1000"></div>
-            <div className="relative w-full aspect-[4/3] md:aspect-square lg:aspect-[4/3] bg-white rounded-3xl overflow-hidden shadow-soft border-4 border-white transform transition-transform duration-700 hover:rotate-1">
-              <Image alt="Shelfie App Interface" src="/hero-image.webp" fill className="object-cover opacity-95 hover:opacity-100 transition-opacity duration-500 scale-105" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[85%] border-2 border-white/50 rounded-2xl flex items-center justify-center pointer-events-none shadow-inner">
-                <div className="absolute top-6 left-6 bg-charcoal/90 backdrop-blur-md px-4 py-2 rounded-full text-white text-sm font-display font-medium flex items-center gap-2 shadow-lg z-20">
-                  <span className="size-2 rounded-full bg-tomato animate-pulse"></span>
-                  <span className="uppercase tracking-wide text-xs">AI Vision Active</span>
+
+          {/* Visual: App in Action */}
+          <div className="relative group">
+             {/* Phone mockup with real app interface */}
+             <div className="relative z-10 bg-white rounded-3xl shadow-2xl p-3 md:p-4 transform transition-transform duration-700 hover:scale-105 border-4 border-white/50">
+                <div className="relative aspect-[4/5] bg-cream rounded-2xl overflow-hidden">
+                    <Image src="/hero-image.webp" fill className="object-cover" alt="Shelfie app showing your pantry organized by room" />
+
+                    {/* Floating badge: Expiring item alert */}
+                    <div className="absolute top-8 -left-6 bg-white p-3 rounded-xl shadow-card border border-stone-100 flex items-center gap-3 animate-bounce-slow">
+                        <div className="bg-warning/20 p-2 rounded-lg">
+                             <Image src="/icons/ingredients/avocado.webp" width={32} height={32} alt="Avocado" />
+                        </div>
+                        <div>
+                            <div className="text-xs text-warning font-bold uppercase tracking-wide">3 Days Left</div>
+                            <div className="text-charcoal font-bold">Avocados</div>
+                        </div>
+                    </div>
+
+                    {/* Floating badge: Recipe suggestion */}
+                    <div className="absolute bottom-12 -right-4 bg-charcoal text-white p-4 rounded-xl shadow-elevated flex items-center gap-4 animate-bounce-slow" style={{ animationDelay: '1s' }}>
+                         <div>
+                            <div className="text-[10px] text-stone-400 font-bold uppercase tracking-wide">Use them in</div>
+                            <div className="font-bold text-lg">Guacamole</div>
+                        </div>
+                        <div className="bg-stem/20 p-2 rounded-lg">
+                             <Image src="/icons/ingredients/tomato.webp" width={24} height={24} alt="Recipe match" />
+                        </div>
+                    </div>
                 </div>
-                <div className="absolute top-[25%] right-[5%] bg-cream border border-stone-200 shadow-xl px-3 py-2 rounded-lg text-xs font-bold text-charcoal flex gap-2 items-center animate-bounce z-20" style={{ animationDuration: '3s' }}>
-                  <div className="size-2 rounded-full bg-stem"></div>
-                  <div className="flex flex-col leading-none gap-0.5">
-                    <span className="font-display">Spinach</span>
-                    <span className="text-text-muted font-normal text-[10px]">Expires in 2d</span>
-                  </div>
-                </div>
-                <div className="absolute bottom-[30%] left-[8%] bg-cream border border-stone-200 shadow-xl px-3 py-2 rounded-lg text-xs font-bold text-charcoal flex gap-2 items-center animate-bounce z-20" style={{ animationDuration: '4s' }}>
-                  <div className="size-2 rounded-full bg-tomato"></div>
-                  <div className="flex flex-col leading-none gap-0.5">
-                    <span className="font-display">Tomatoes</span>
-                    <span className="text-text-muted font-normal text-[10px]">Great for Sauce</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+             </div>
+
+             {/* Warm glow behind */}
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-tomato/20 to-spice/20 rounded-full blur-3xl -z-10"></div>
           </div>
+
         </div>
       </div>
     </div>
